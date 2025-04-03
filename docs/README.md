@@ -3,11 +3,11 @@
 Informações básicas do projeto.
 
 * **Projeto:** [NOME DO PROJETO]
-* **Repositório GitHub:** [LINK PARA O REPOSITÓRIO NO GITHUB]
+* **Repositório GitHub:** (https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti1-2010100-tiawsemestre1-segurancatransito.git)
 * **Membros da equipe:**
 
-  * [Fulano](https://github.com/fulano) ⚠️ EXEMPLO ⚠️
-  * [Beltrano](https://github.com/beltrano) ⚠️ EXEMPLO ⚠️
+  * [Arthur Costa Silva](https://github.com/Arthurcosta10)
+  * [Eduardo Araujo Reis](https://github.com/Eduardo-Reis-dev) 
   * [Cicrano](https://github.com/cicrano) ⚠️ EXEMPLO ⚠️
 
 A documentação do projeto é estruturada da seguinte forma:
@@ -23,6 +23,8 @@ A documentação do projeto é estruturada da seguinte forma:
 ✅ [Documentação de Design Thinking (MIRO)](files/processo-dt.pdf)
 
 # Contexto
+A principal meta do nosso trabalho é de auxiliar, melhorar e otimizar a vida de todas as pessoas que utilizam trânsito diariamente.
+Analisando a rotina de milhões de brasileiros, nota-se algo em comum: grande maioria das pessoas tem envolvimento com o trânsito no seu cotidiano, havendo um forte relato sobre acidentes e/ou quase acidentes, que causam várias mortes diariamente, e por isso, decidimos nos envolver com a temática e procurar soluções objetivas. Nosso trabalho envolve diversos tipos de frequentadores do trânsito, pedestres, ciclistas, motoristas regulares, motoristas de aplicativo, caminhoneiros e até motociclistas.
 
 Detalhes sobre o espaço de problema, os objetivos do projeto, sua justificativa e público-alvo.
 
