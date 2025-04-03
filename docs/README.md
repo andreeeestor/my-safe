@@ -8,7 +8,7 @@ Informações básicas do projeto.
 
   * [Arthur Costa Silva](https://github.com/Arthurcosta10)
   * [Eduardo Araujo Reis](https://github.com/Eduardo-Reis-dev) 
-  * [Cicrano](https://github.com/cicrano) ⚠️ EXEMPLO ⚠️
+  * [Julya Ketly Oliveira Gandra](https://github.com/jjgandra06)
 
 A documentação do projeto é estruturada da seguinte forma:
 
