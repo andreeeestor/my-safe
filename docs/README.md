@@ -26,13 +26,10 @@ A documentação do projeto é estruturada da seguinte forma:
 A principal meta do nosso trabalho é de auxiliar, melhorar e otimizar a vida de todas as pessoas que utilizam trânsito diariamente.
 Analisando a rotina de milhões de brasileiros, nota-se algo em comum: grande maioria das pessoas tem envolvimento com o trânsito no seu cotidiano, havendo um forte relato sobre acidentes e/ou quase acidentes, que causam várias mortes diariamente, e por isso, decidimos nos envolver com a temática e procurar soluções objetivas. Nosso trabalho envolve diversos tipos de frequentadores do trânsito, pedestres, ciclistas, motoristas regulares, motoristas de aplicativo, caminhoneiros e até motociclistas.
 
-Detalhes sobre o espaço de problema, os objetivos do projeto, sua justificativa e público-alvo.
-
 ## Problema
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+Segurança no Trânsito
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
 > Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
 >
