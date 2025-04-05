@@ -41,7 +41,7 @@ O principal problema que percebemos é como o trânsito está inserido na vida d
 > - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
-
+O objetivo principal do projeto é resolver o problema de milhões de brasileiros que utilizam da mobilidade urbana para realizar tarefas do cotidiano de maneira segura e acessível a partir de um software para solucionar esse problema. Temos como foco principal a melhora do trânsito tanto no meio urbano quanto no meio rodoviario e de previnir acidentes que possam resultar em feridos ou em mortos.
 **✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
 
 > ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
