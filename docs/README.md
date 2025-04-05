@@ -9,6 +9,7 @@ Informações básicas do projeto.
   * [Arthur Costa Silva](https://github.com/Arthurcosta10)
   * [Eduardo Araujo Reis](https://github.com/Eduardo-Reis-dev) 
   * [Julya Ketly Oliveira Gandra](https://github.com/jjgandra06)
+  * [Jose Henrique Almeida Salustiano](https://github.com/JosehenriqueAdm)
 
 A documentação do projeto é estruturada da seguinte forma:
 
