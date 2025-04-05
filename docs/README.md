@@ -30,6 +30,7 @@ Analisando a rotina de milhões de brasileiros, nota-se algo em comum: grande ma
 
 Segurança no Trânsito
 
+O principal problema que percebemos é como o trânsito está inserido na vida de cada um no cotidiano, e como a segurança nesse tópico é fundamental para que milhões de brasileiros possam se deslocar com seguridade. Pensando nisso, elaboramos uma ideia que pode revolucionar a mobilidade urbana, com a maior segurança possível.
 >
 > Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
 >
