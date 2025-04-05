@@ -93,8 +93,16 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 | EU COMO...`PERSONA` | QUERO/PRECISO ...`FUNCIONALIDADE`        | PARA ...`MOTIVO/VALOR`               |
 | --------------------- | ------------------------------------------ | -------------------------------------- |
-| Usuário do sistema   | Registrar minhas tarefas ⚠️ EXEMPLO ⚠️ | Não esquecer de fazê-las             |
-| Administrador         | Alterar permissões ⚠️ EXEMPLO ⚠️      | Permitir que possam administrar contas |
+| Motorista Regular   | Saber por onde andar                     | Ter mais segurança no trânsito         |
+| Ciclista            | Saber possíveis irregularidades presentes no trajeto     | Eu conseguir realizar minhas viagens com mais certeza que posso voltar bem para casa. |
+| Pedestre         | Ter segurança para atravessar qualquer rua.     | Evitar acidentes por falta de sinalização |
+| Motorista de Aplicativo         |Saber quais ruas evitar passar sempre que possível  |  Garantir segurança pro motorista e pro passageiro|
+| Motoqueiro Regular       |   Saber quais locais eu posso ou não utilizar os corredores na via    |  Evitar que algum motorista me feche, gerando possíveis acidentes|
+| Motoqueiro de Aplicativo         |Saber das melhores rotas para realizar minhas entregas  e Saber quais locais eu posso ou não utilizar os corredores na via  | Evitar locais indesejados e acidentes comigo e com o passageiro |
+| Entregador (Correios) |   Saber se o cliente estará em casa ou não    | Para evitar rotas desnecessárias e o cliente demorar a receber sua encomenda |
+| Caminhoneiro         | Saber os melhores locais de parada, além de saber locais de possíveis acostamentos se necessário  |Para não me desgastar durante a viagem, tornando-a perigosa  |
+| Motorista de ônibus         |    Saber rotas alternativas para evitar trânsito e possíveis bloqueios inesperados nas vias.   |  Para não gastar tempo com atitudes de motoristas imprudentes e Como quando o motorista para a menos de 5 metros da esquina|
+| Motorista de Estrada         |  Saber quais locais seguros para realizar uma ultrapassagem    |  Para otimizar as minhas viagens com segurança|
 
 > ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
