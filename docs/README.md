@@ -8,7 +8,7 @@ Informações básicas do projeto.
 
   * [Arthur Costa Silva](https://github.com/Arthurcosta10)
   * [Eduardo Araujo Reis](https://github.com/Eduardo-Reis-dev) 
-  * [Eduardo Araujo Reis](https://github.com/guedola1710) 
+  * [Gabriel Guedes Martins](https://github.com/guedola1710) 
   * [Julya Ketly Oliveira Gandra](https://github.com/jjgandra06)
   * [Jose Henrique Almeida Salustiano](https://github.com/JosehenriqueAdm)
 
