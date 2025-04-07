@@ -2,13 +2,15 @@
 
 Informações básicas do projeto.
 
-* **Projeto:** [NOME DO PROJETO]
+* **Projeto:** MySafe-Sua Segurança no trânsito
 * **Repositório GitHub:** (https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti1-2010100-tiawsemestre1-segurancatransito.git)
 * **Membros da equipe:**
 
   * [Arthur Costa Silva](https://github.com/Arthurcosta10)
   * [Eduardo Araujo Reis](https://github.com/Eduardo-Reis-dev) 
+  * [Eduardo Araujo Reis](https://github.com/guedola1710) 
   * [Julya Ketly Oliveira Gandra](https://github.com/jjgandra06)
+  * [Jose Henrique Almeida Salustiano](https://github.com/JosehenriqueAdm)
 
 A documentação do projeto é estruturada da seguinte forma:
 
@@ -20,7 +22,7 @@ A documentação do projeto é estruturada da seguinte forma:
 6. Solução
 7. Referências Bibliográficas
 
-✅ [Documentação de Design Thinking (MIRO)](files/processo-dt.pdf)
+✅ [Documentação de Design Thinking (MIRO)](https://miro.com/app/board/uXjVIMEomlY=/)
 
 # Contexto
 A principal meta do nosso trabalho é de auxiliar, melhorar e otimizar a vida de todas as pessoas que utilizam trânsito diariamente.
@@ -30,55 +32,25 @@ Analisando a rotina de milhões de brasileiros, nota-se algo em comum: grande ma
 
 Segurança no Trânsito
 
->
-> Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
->
-> **Orientações**:
->
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+O principal problema que percebemos é como o trânsito está inserido na vida de cada um no cotidiano, e como a segurança nesse tópico é fundamental para que milhões de brasileiros possam se deslocar com seguridade. Pensando nisso, elaboramos uma ideia que pode revolucionar a mobilidade urbana, com a maior segurança possível.
 
 ## Objetivos
-
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
->
-> **Orientações**:
->
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O objetivo principal do projeto é resolver o problema de milhões de brasileiros que utilizam da mobilidade urbana para realizar tarefas do cotidiano de maneira segura e acessível a partir de um software para solucionar esse problema. Temos como foco principal a melhora do trânsito tanto no meio urbano quanto no meio rodoviario e de previnir acidentes que possam resultar em feridos ou em mortos.
 
 ## Justificativa
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
->
-> O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
->
-> **Orientações**:
->
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+O motivação principal para trabalhar com essa aplicação é de ajudar pessoas a terem uma vida longa e salva de acidentes. A partir de relatos, notamos que a maioria das pessoas que tem envolvimento frequente com trânsito, já presenciaram ou até mesmo sofreram algum tipo de acidente, e por isso tivemos esse encorajamento para ajduar a salvar vidas. Por isso, concluimos que a melhor alternativa seria utilizar um software para fazer essa ideia se tornar realidade.
 
 ## Público-Alvo
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+
+O público-alvo do nosso projeto são todos que tenham quaisquer tipo de relação com trânsito, de todas as idades, com o objetivo de abranger o máximo de pessoas possível. Como nosso leque de possíbilidade de clientes é grande, foi necessário criar diferentes personas, partindo desde motoristas regulares e indo para diferentes veículos, como caminhões, motos, biciletas e pedestres, por exemplo.
 
 > ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
 > Descreva quais são as pessoas que usarão a sua aplicação indicando os diferentes perfis. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
 >
 > Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
->
-> **Orientações**:
->
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
 
 # Product Discovery
 
@@ -122,12 +94,19 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 | EU COMO...`PERSONA` | QUERO/PRECISO ...`FUNCIONALIDADE`        | PARA ...`MOTIVO/VALOR`               |
 | --------------------- | ------------------------------------------ | -------------------------------------- |
-| Usuário do sistema   | Registrar minhas tarefas ⚠️ EXEMPLO ⚠️ | Não esquecer de fazê-las             |
-| Administrador         | Alterar permissões ⚠️ EXEMPLO ⚠️      | Permitir que possam administrar contas |
+| Motorista Regular   | Saber por onde andar                     | Ter mais segurança no trânsito         |
+| Ciclista            | Saber possíveis irregularidades presentes no trajeto     | Eu conseguir realizar minhas viagens com mais certeza que posso voltar bem para casa. |
+| Pedestre         | Ter segurança para atravessar qualquer rua.     | Evitar acidentes por falta de sinalização |
+| Motorista de Aplicativo         |Saber quais ruas evitar passar sempre que possível  |  Garantir segurança pro motorista e pro passageiro|
+| Motoqueiro Regular       |   Saber quais locais eu posso ou não utilizar os corredores na via    |  Evitar que algum motorista me feche, gerando possíveis acidentes|
+| Motoqueiro de Aplicativo         |Saber das melhores rotas para realizar minhas entregas  e Saber quais locais eu posso ou não utilizar os corredores na via  | Evitar locais indesejados e acidentes comigo e com o passageiro |
+| Entregador (Correios) |   Saber se o cliente estará em casa ou não    | Para evitar rotas desnecessárias e o cliente demorar a receber sua encomenda |
+| Caminhoneiro         | Saber os melhores locais de parada, além de saber locais de possíveis acostamentos se necessário  |Para não me desgastar durante a viagem, tornando-a perigosa  |
+| Motorista de ônibus         |    Saber rotas alternativas para evitar trânsito e possíveis bloqueios inesperados nas vias.   |  Para não gastar tempo com atitudes de motoristas imprudentes e Como quando o motorista para a menos de 5 metros da esquina|
+| Motorista de Estrada         |  Saber quais locais seguros para realizar uma ultrapassagem    |  Para otimizar as minhas viagens com segurança|
 
 > ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
-> Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 >
 > **Orientações**:
 >
