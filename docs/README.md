@@ -8,7 +8,7 @@ Informações básicas do projeto.
 
   * [Arthur Costa Silva](https://github.com/Arthurcosta10)
   * [Eduardo Araujo Reis](https://github.com/Eduardo-Reis-dev) 
-  * [Eduardo Araujo Reis](https://github.com/guedola1710) 
+  * [Gabriel Guedes Martins](https://github.com/guedola1710) 
   * [Julya Ketly Oliveira Gandra](https://github.com/jjgandra06)
   * [Jose Henrique Almeida Salustiano](https://github.com/JosehenriqueAdm)
 
@@ -133,15 +133,24 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID     | Descrição do Requisito                                   | Prioridade |
 | ------ | ---------------------------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas ⚠️ EXEMPLO ⚠️ | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês ⚠️ EXEMPLO ⚠️ | MÉDIA     |
+| RF-001 | Cadastro de Usuários | ALTA       |
+| RF-002 |Registro de infrações recorrentes  | MÉDIA     |
+| RF-003 | Sistema de pontuação educativa   | MÉDIA     |
+| RF-004 | Relatórios de comportamento no trânsito   | ALTA     |
+| RF-005 |Campanhas interativas   | MÉDIA     |
+| RF-006 | Simulações de risco  | ALTA     |
+| RF-007 | Sistema de feedback comunitário  | MÉDIA     |
+| RF-008 | Treinamento gamificado   | MÉDIA     |
+| RF-009 | Botão de emergência para pedestres e ciclistas   | ALTA     |
+| RF-010 | Integração com seguradoras e autoescolas  | BAIXA     |
+
 
 ### Requisitos não Funcionais
 
 | ID      | Descrição do Requisito                                                              | Prioridade |
 | ------- | ------------------------------------------------------------------------------------- | ---------- |
-| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel ⚠️ EXEMPLO ⚠️ | MÉDIA     |
-| RNF-002 | Deve processar requisições do usuário em no máximo 3s ⚠️ EXEMPLO ⚠️          | BAIXA      |
+| RNF-001 |Escalabilidade   | ALTA     |
+| RNF-002 | Botão de emergência para pedestres e ciclistas     | ALTA      |
 
 > ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
