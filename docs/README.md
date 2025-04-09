@@ -163,27 +163,16 @@ Descrição para a tela XPTO
 ![Wireframe Oficial](images/wireframeoficial.jpg)
 
 
-
 ### User Flow
 
-**✳️✳️✳️ COLOQUE AQUI O DIAGRAMA DE FLUXO DE TELAS ✳️✳️✳️**
 
-![Exemplo de fluxo de telas](images/exemplo-userflow.png)
+![Fluxo de telas](images/fluxodeusuario.jpg)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
->
-> **Orientações**:
->
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
 
 ### Protótipo Interativo
 
-
 ✅ [Protótipo Interativo](https://embed.figma.com/proto/1SRUSdUpNZ0nNyK1eS3Jji/Prototipo?node-id=144-2471&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=144%3A2471&show-proto-sidebar=1&embed-host=share)
+
 # Metodologia
 
 Detalhes sobre a organização do grupo e o ferramental empregado.
