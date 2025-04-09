@@ -75,10 +75,19 @@ O público-alvo do nosso projeto são todos que tenham quaisquer tipo de relaç�
 
 ### Personas
 
+Persona 1
 <img src="images/persona-1.jpg">
+
+Persona 2
 <img src="images/persona-2.jpg">
+
+Persona 3
 <img src="images/persona-3.jpg">
+
+Persona 4
 <img src="images/persona-4.jpg">
+
+Persona 5
 <img src="images/persona-5.jpg">
 
 
