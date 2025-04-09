@@ -146,12 +146,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | ID      | Descrição do Requisito                                                              | Prioridade |
 | ------- | ------------------------------------------------------------------------------------- | ---------- |
 | RNF-001 |Escalabilidade   | ALTA     |
-| RNF-002 | Botão de emergência para pedestres e ciclistas     | ALTA      |
+| RNF-002 | Botão de emergência para os Usuários    | ALTA      |
 
 >
 ## Projeto de Interface
 
-Artefatos relacionados com a interface e a interacão do usuário na proposta de solução.
 
 ### Wireframes
 
