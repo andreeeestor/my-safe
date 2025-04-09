@@ -133,8 +133,17 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID     | Descrição do Requisito                                   | Prioridade |
 | ------ | ---------------------------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas ⚠️ EXEMPLO ⚠️ | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês ⚠️ EXEMPLO ⚠️ | MÉDIA     |
+| RF-001 | Cadastro de Usuários | ALTA       |
+| RF-002 |Registro de infrações recorrentes  | MÉDIA     |
+| RF-003 | Sistema de pontuação educativa   | MÉDIA     |
+| RF-004 | Relatórios de comportamento no trânsito   | ALTA     |
+| RF-005 |Campanhas interativas   | MÉDIA     |
+| RF-006 | Simulações de risco  | ALTA     |
+| RF-007 | Sistema de feedback comunitário  | MÉDIA     |
+| RF-008 | Treinamento gamificado   | MÉDIA     |
+| RF-009 | Botão de emergência para pedestres e ciclistas   | ALTA     |
+| RF-010 | Integração com seguradoras e autoescolas  | BAIXA     |
+
 
 ### Requisitos não Funcionais
 
