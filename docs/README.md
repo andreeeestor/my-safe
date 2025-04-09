@@ -157,24 +157,12 @@ Artefatos relacionados com a interface e a interacão do usuário na proposta de
 
 Estes são os protótipos de telas do sistema.
 
-**✳️✳️✳️ COLOQUE AQUI OS PROTÓTIPOS DE TELAS COM TÍTULO E DESCRIÇÃO ✳️✳️✳️**
-
-##### TELA XPTO ⚠️ EXEMPLO ⚠️
 
 Descrição para a tela XPTO
 
-![Exemplo de wireframe](images/exemplo-wireframe.png)
+![Wireframe Oficial](images/wireframeoficial.jpg)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
->
-> **Orientações**:
->
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
+
 
 ### User Flow
 
@@ -194,9 +182,8 @@ Descrição para a tela XPTO
 
 ### Protótipo Interativo
 
-**✳️✳️✳️ COLOQUE AQUI UM IFRAME COM SEU PROTÓTIPO INTERATIVO ✳️✳️✳️**
 
-✅ [Protótipo Interativo (MarvelApp)](https://embed.figma.com/proto/1SRUSdUpNZ0nNyK1eS3Jji/Prototipo?node-id=144-2471&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=144%3A2471&show-proto-sidebar=1&embed-host=share)
+✅ [Protótipo Interativo](https://embed.figma.com/proto/1SRUSdUpNZ0nNyK1eS3Jji/Prototipo?node-id=144-2471&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=144%3A2471&show-proto-sidebar=1&embed-host=share)
 # Metodologia
 
 Detalhes sobre a organização do grupo e o ferramental empregado.
