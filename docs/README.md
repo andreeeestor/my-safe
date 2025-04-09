@@ -46,12 +46,6 @@ O motivação principal para trabalhar com essa aplicação é de ajudar pessoas
 
 O público-alvo do nosso projeto são todos que tenham quaisquer tipo de relação com trânsito, de todas as idades, com o objetivo de abranger o máximo de pessoas possível. Como nosso leque de possíbilidade de clientes é grande, foi necessário criar diferentes personas, partindo desde motoristas regulares e indo para diferentes veículos, como caminhões, motos, biciletas e pedestres, por exemplo.
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Descreva quais são as pessoas que usarão a sua aplicação indicando os diferentes perfis. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
->
-> Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
-
 # Product Discovery
 
 ## Etapa de Entendimento
@@ -75,10 +69,19 @@ O público-alvo do nosso projeto são todos que tenham quaisquer tipo de relaç�
 
 ### Personas
 
+Persona 1
 <img src="images/persona-1.jpg">
+
+Persona 2
 <img src="images/persona-2.jpg">
+
+Persona 3
 <img src="images/persona-3.jpg">
+
+Persona 4
 <img src="images/persona-4.jpg">
+
+Persona 5
 <img src="images/persona-5.jpg">
 
 
@@ -103,26 +106,23 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 | Motorista de ônibus         |    Saber rotas alternativas para evitar trânsito e possíveis bloqueios inesperados nas vias.   |  Para não gastar tempo com atitudes de motoristas imprudentes e Como quando o motorista para a menos de 5 metros da esquina|
 | Motorista de Estrada         |  Saber quais locais seguros para realizar uma ultrapassagem    |  Para otimizar as minhas viagens com segurança|
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
->
-> **Orientações**:
->
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
 
 ## Proposta de Valor
 
-**✳️✳️✳️ APRESENTE O DIAGRAMA DA PROPOSTA DE VALOR PARA CADA PERSONA ✳️✳️✳️**
+Proposta Persona 1
+<img src="images/proposta-1.jpg">
 
-##### Proposta para Persona XPTO ⚠️ EXEMPLO ⚠️
+Proposta Persona 2
+<img src="images/proposta-2.jpg">
 
-![Exemplo de proposta de valor](images/exemplo-proposta-valor.png)
+Proposta Persona 3
+<img src="images/proposta-3.jpg">
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> O mapa da proposta de valor é uma ferramenta que nos ajuda a definir qual tipo de produto ou serviço melhor atende às personas definidas anteriormente.
+Proposta Persona 4
+<img src="images/proposta-4.jpg">
 
+Proposta Persona 5
+<img src="images/proposta-5.jpg">
 ## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
@@ -150,22 +150,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RNF-001 |Escalabilidade   | ALTA     |
 | RNF-002 | Botão de emergência para pedestres e ciclistas     | ALTA      |
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
-> Os requisitos de um projeto são classificados em dois grupos:
->
-> - [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
->   correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
-> - [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
->   correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
->
-> Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
->
-> **Orientações**:
->
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
 ## Projeto de Interface
 
 Artefatos relacionados com a interface e a interacão do usuário na proposta de solução.
