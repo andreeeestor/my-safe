@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MySafe - Registro de Locais</title>
+
+  <!-- Estilo Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>MySafe</h1>
+    <p>Registre locais seguros e perigosos no trânsito</p>
+  </header>
+
+  <main>
+    <form class="registro-form">
+      <h2>Registrar Local</h2>
+
+      <label for="tipo">Tipo de Local:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">Selecione</option>
+        <option value="seguro">Seguro</option>
+        <option value="perigoso">Perigoso</option>
+      </select>
+
+      <label for="nome">Nome do Local:</label>
+      <input type="text" id="nome" name="nome" required placeholder="Ex: Escola Municipal" />
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" rows="4" required placeholder="Descreva o local..."></textarea>
+
+      <label for="imagem">Imagem (opcional):</label>
+      <input type="file" id="imagem" name="imagem" accept="image/*" />
+
+      <!-- Campos ocultos para localização -->
+      <input type="hidden" id="lat" name="lat">
+      <input type="hidden" id="lng" name="lng">
+
+      <button type="submit">Registrar Local</button>
+    </form>
+
+    <!-- Seção de busca de endereço -->
+    <section class="busca-endereco">
+      <h2>Buscar Endereço</h2>
+      <input type="text" id="endereco" placeholder="Digite um endereço..." />
+      <button type="button" onclick="buscarEndereco()">Buscar</button>
+    </section>
+
+    <section class="mapa-preview">
+      <h2>Mapa Interativo</h2>
+      <div id="mapa" style="height: 300px;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MySafe - Segurança no Trânsito</p>
+  </footer>
+
+  <!-- Script Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Script personalizado -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+

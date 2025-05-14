@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #1d4ed8;
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.registro-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  width: 350px;
+}
+
+.registro-form h2 {
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+.registro-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.registro-form input,
+.registro-form select,
+.registro-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.registro-form button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registro-form button:hover {
+  background-color: #2563eb;
+}
+
+.mapa-preview {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  width: 500px;
+}
+
+.mapa-preview h2 {
+  margin-bottom: 10px;
+}
+
+#mapa {
+  height: 300px;
+  background-color: #e5e7eb;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b7280;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280;
+}
