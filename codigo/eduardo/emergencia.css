@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.btn-emergencia {
+    background-color: #d32f2f;
+    color: #fff;
+    text-decoration: none;
+    padding: 50px 50px;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.btn-emergencia:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(183, 28, 28, 0.5);
+}
+
+.btn-emergencia:active {
+    transform: scale(0.98);
+}
+
+.icon-telefone {
+    width: 24px;
+    height: 20px;
+    fill: white;
+}
