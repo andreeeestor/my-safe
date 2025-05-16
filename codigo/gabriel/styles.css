@@ -114,10 +114,6 @@ main {
   max-width: 900px;
 }
 
-.locais-registrados h2 {
-  margin-bottom: 15px;
-  color: #111827;
-}
 
 #locaisContainer {
   list-style: none;
