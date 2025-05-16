@@ -104,42 +104,52 @@ main {
   align-items: center;
   color: #6b7280;
 }
+/* Locais Registrados */
+.locais-registrados {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 900px;
+}
 
-/* Lista de locais registrados (caso queira adicionar) */
+.locais-registrados h2 {
+  margin-bottom: 15px;
+  color: #111827;
+}
+
 #locaisContainer {
-  margin-top: 20px;
   list-style: none;
   padding: 0;
 }
 
 #locaisContainer li {
-  background-color: #e0f2fe;
+  background-color: #f0f9ff;
   border-left: 5px solid #1d4ed8;
   padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#locaisContainer .info {
+  flex-grow: 1;
+  margin-right: 10px;
 }
 
 #locaisContainer button {
   background-color: #dc2626;
   color: white;
   border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 #locaisContainer button:hover {
   background-color: #b91c1c;
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  margin-top: 40px;
-  color: #6b7280;
 }
