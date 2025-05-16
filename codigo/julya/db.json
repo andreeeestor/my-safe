@@ -1,0 +1,12 @@
+{
+  "avaliacoes": [
+    {
+      "id": "1",
+      "nome": "João",
+      "tipo": "motorista",
+      "nota": 5,
+      "comentario": "",
+      "data": ""
+    }
+  ]
+}
