@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -33,6 +34,7 @@ main {
   justify-content: center;
 }
 
+/* Formulário de registro */
 .registro-form {
   background-color: #ffffff;
   padding: 20px;
@@ -80,6 +82,7 @@ main {
   background-color: #2563eb;
 }
 
+/* Mapa */
 .mapa-preview {
   background-color: #ffffff;
   padding: 20px;
@@ -102,6 +105,39 @@ main {
   color: #6b7280;
 }
 
+/* Lista de locais registrados (caso queira adicionar) */
+#locaisContainer {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+#locaisContainer li {
+  background-color: #e0f2fe;
+  border-left: 5px solid #1d4ed8;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#locaisContainer button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+#locaisContainer button:hover {
+  background-color: #b91c1c;
+}
+
+/* Rodapé */
 footer {
   text-align: center;
   margin-top: 40px;
