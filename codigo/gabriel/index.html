@@ -7,7 +7,6 @@
 
   <!-- Estilo Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
   <!-- Estilo personalizado -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -19,7 +18,7 @@
   </header>
 
   <main>
-    <form class="registro-form">
+    <form class="registro-form" id="formRegistro">
       <h2>Registrar Local</h2>
 
       <label for="tipo">Tipo de Local:</label>
@@ -38,14 +37,12 @@
       <label for="imagem">Imagem (opcional):</label>
       <input type="file" id="imagem" name="imagem" accept="image/*" />
 
-      <!-- Campos ocultos para localização -->
       <input type="hidden" id="lat" name="lat">
       <input type="hidden" id="lng" name="lng">
 
       <button type="submit">Registrar Local</button>
     </form>
 
-    <!-- Seção de busca de endereço -->
     <section class="busca-endereco">
       <h2>Buscar Endereço</h2>
       <input type="text" id="endereco" placeholder="Digite um endereço..." />
@@ -56,18 +53,19 @@
       <h2>Mapa Interativo</h2>
       <div id="mapa" style="height: 300px;"></div>
     </section>
+
+    <section id="lista-locais">
+      <h2>Locais Registrados</h2>
+      <ul id="locaisContainer"></ul>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 MySafe - Segurança no Trânsito</p>
   </footer>
 
-  <!-- Script Leaflet -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- Script personalizado -->
   <script src="script.js"></script>
 </body>
 </html>
-
-
