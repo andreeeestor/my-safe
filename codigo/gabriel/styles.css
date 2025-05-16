@@ -22,11 +22,6 @@ header h1 {
   font-size: 2.5rem;
 }
 
-header p {
-  font-size: 1.1rem;
-  color: #374151;
-}
-
 main {
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +30,7 @@ main {
 }
 
 /* Formulário de registro */
-.registro-form {
+.registro-form form {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 12px;
@@ -63,6 +58,7 @@ main {
   border: 1px solid #d1d5db;
   border-radius: 6px;
   font-size: 1rem;
+  resize: vertical;
 }
 
 .registro-form button {
@@ -89,6 +85,7 @@ main {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   width: 500px;
+  max-width: 100%;
 }
 
 .mapa-preview h2 {
@@ -99,11 +96,8 @@ main {
   height: 300px;
   background-color: #e5e7eb;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #6b7280;
 }
+
 /* Locais Registrados */
 .locais-registrados {
   background-color: #ffffff;
@@ -114,10 +108,15 @@ main {
   max-width: 900px;
 }
 
+.locais-registrados h2 {
+  margin-bottom: 15px;
+  color: #111827;
+}
 
 #locaisContainer {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 #locaisContainer li {
@@ -126,14 +125,37 @@ main {
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 12px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
+}
+
+#locaisContainer li.perigoso {
+  border-left-color: #dc2626;
+  background-color: #fee2e2;
 }
 
 #locaisContainer .info {
   flex-grow: 1;
   margin-right: 10px;
+  word-break: break-word;
+}
+
+#locaisContainer .info strong {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+#locaisContainer .info p {
+  margin-bottom: 5px;
+}
+
+#locaisContainer .info small {
+  color: #6b7280;
+  font-size: 0.875rem;
 }
 
 #locaisContainer button {
@@ -144,8 +166,35 @@ main {
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.85rem;
+  transition: background-color 0.3s ease;
 }
 
 #locaisContainer button:hover {
   background-color: #b91c1c;
 }
+
+#locaisContainer button + button {
+  margin-left: 8px;
+}
+footer {
+  text-align: center;
+  padding: 15px 20px;
+  background-color: transparent; 
+  color: #6b7280;
+  width: 100%;
+}
+/* Responsividade */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .registro-form form,
+  .mapa-preview,
+  .locais-registrados {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+

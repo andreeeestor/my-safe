@@ -54,8 +54,21 @@
       <div id="mapa" style="height: 300px;"></div>
     </section>
 
-    <section id="lista-locais">
-      <ul id="locaisContainer"></ul>
+    <section class="locais-registrados">
+    <h2>Locais Registrados</h2>
+    <ul id="locaisContainer"></ul>
+    <li>
+  <div class="info">
+    <strong>PERIGOSO - Estádio</strong>
+    <p>Descrição do local aqui...</p>
+    <small>Localização: -19.8659, -43.9710</small>
+  </div>
+  <div class="acoes">
+    <button onclick="editarLocal('idDoLocal')">Editar</button>
+    <button onclick="removerLocal('idDoLocal')">Remover</button>
+  </div>
+</li>
+
     </section>
   </main>
 
