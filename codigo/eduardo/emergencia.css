@@ -1,73 +1,87 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-header {
+header, footer {
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
     background-color: transparent;
-    z-index: 10;
+    color: #1d4ed8;
+    font-weight: bold;
+    flex-shrink: 0;
 }
 
-header h1 {
-    color: #1d4ed8;
-    font-size: 2.5rem;
-    margin: 0;
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
 }
 
 .container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 600px;
+    width: 100%;
 }
 
 .btn-emergencia {
     background-color: #d32f2f;
     color: #fff;
     text-decoration: none;
-    padding: 50px 50px;
-    font-size: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+    padding: 40px;
+    font-size: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
 }
 
 .btn-emergencia:hover {
     background-color: #b71c1c;
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(183, 28, 28, 0.5);
 }
 
-.btn-emergencia:active {
-    transform: scale(0.98);
-}
-
-.icon-telefone {
-    width: 24px;
-    height: 20px;
-    fill: white;
-}
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-  color: #6b7280;
-    width: 100%;
+.mensagem {
+    margin-top: 40px;
+    color: #b91c1c;
+    font-weight: bold;
+    font-size: 1.2rem;
     text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: transparent;
-    z-index: 10;
+    padding: 0 20px;
+}
+
+
+@media (max-width: 768px) {
+    .btn-emergencia {
+        font-size: 1.8rem;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-emergencia {
+        font-size: 2rem;
+        padding: 40px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .mensagem {
+        font-size: 1rem;
+    }
 }
