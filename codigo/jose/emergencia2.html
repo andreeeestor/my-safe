@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de serviço emergêncial</title>
+    <link rel="stylesheet" href="emergencia2.css">
+
+    
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Cadastro de serviço emergêncial</h2>
+    <form id="formCaminhoneiro">
+        <label for="modelo">Cadastrar número de telefone para emergências</label>
+        <input type="text" id="modelo" name="modelo" placeholder="Ex: (031) 9####-####">
+
+        <label for="ano">Anos em Serviço</label>
+        <input type="number" id="ano" name="ano" placeholder="Ex: 3 anos em serviço" min="00" max="1000">
+
+        <label for="tipoCarga">Tipo de serviço emergencial em execução</label>
+        <select id="tipoCarga" name="tipoCarga">
+            <option value="">-- Selecione --</option>
+            <option value="Guarda Municipal">Guarda Municipal</option>
+            <option value="Agente Florestal">Agente Florestal</option>
+            <option value="Samu">Samu</option>
+            <option value="Policial Militar">Policial Militar</option>
+            <option value="Policial Civil">Policial Civil</option>
+            <option value="Bombeiro Civil">Bombeiro Civil</option>
+            <option value="Bombeiro Militar">Bombeiro Militar</option>
+        </select>
+
+        <label for="rota">Cadastrar ponto de apoio</label>
+        <input type="text" id="rota" name="rota" placeholder="Ex: Próximo a Puc no coréu">
+
+        <label for="infoAdicional">Informações Adicionais</label>
+        <textarea id="infoAdicional" name="infoAdicional" rows="4" placeholder="Detalhes adicionais..."></textarea>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>
+
+<div class="table-container">
+    <h3>Lista de emergência</h3>
+    <table id="tabelaCaminhoneiros">
+        <thead>
+            <tr>
+                <th>Números de emergência</th>
+                <th>Anos em serviço</th>
+                <th>Tipo de serviço emergencial em execução</th>
+                <th>Pontos de apoio</th>
+                <th>Informações Adicionais</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+</body>
+<footer>
+    <p>&copy; 2025 MySafe - Segurança no Trânsito</p>
+</footer>
+<script src="emergencia2.js"></script>
+</html>
