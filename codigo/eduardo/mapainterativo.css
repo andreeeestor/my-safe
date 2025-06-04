@@ -54,7 +54,7 @@ header, footer {
 /*celular*/
 @media (max-width: 767.98px) {
     #map {
-        height: 00px;
+        height: 430px;
     }
 }
 
