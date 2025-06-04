@@ -19,7 +19,7 @@ const trackingStatus = document.getElementById('trackingStatus');
 const routeInfo = document.getElementById('routeInfo');
 const btnClear = document.getElementById('btnClear');
 
-// === Função de autocomplete com Photon ===
+// === função de autocomplete com photon ===
 function setupAutocomplete(input) {
     const container = document.createElement('div');
     container.classList.add('autocomplete-items');
@@ -132,7 +132,7 @@ async function calculateRoute() {
     routeInfo.textContent = `Distância: ${distance} km | Tempo estimado: ${duration} minutos`;
 }
 
-// === Limpar Rota ===
+// ===limpar rota ===
 function clearRoute() {
     if (routeLayer) {
         map.removeLayer(routeLayer);
