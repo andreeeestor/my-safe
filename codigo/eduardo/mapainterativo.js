@@ -1,134 +1,189 @@
-const map = L.map('map').setView([-23.55052, -46.633308], 13); // São Paulo inicial
+// === Inicialização do mapa ===
+const map = L.map('map').setView([-23.5505, -46.6333], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'
 }).addTo(map);
 
-let routeLayer;
-let userMarker;
-let watchId;
+let routeLayer = null;
+let currentPositionMarker = null;
+let watchId = null;
 
-const apiKey = "5b3ce3597851110001cf6248dfab5e635474467b8043c2a84f9bc4a4";
+// Referências DOM
+const originInput = document.getElementById('origin');
+const destinationInput = document.getElementById('destination');
+const btnTracking = document.getElementById('btnTracking');
+const btnIcon = document.getElementById('btnIcon');
+const btnText = document.getElementById('btnText');
+const trackingStatus = document.getElementById('trackingStatus');
+const routeInfo = document.getElementById('routeInfo');
 
+// === Função de autocomplete com Photon ===
+function setupAutocomplete(input) {
+    const container = document.createElement('div');
+    container.classList.add('autocomplete-items');
+    input.parentNode.style.position = 'relative';
+    input.parentNode.appendChild(container);
 
-async function geocode(address) {
-    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    if (data.length === 0) {
-        alert('Endereço não encontrado: ' + address);
-        return null;
-    }
-    return [parseFloat(data[0].lat), parseFloat(data[0].lon)];
+    input.addEventListener('input', async () => {
+        const val = input.value;
+        if (!val) {
+            container.innerHTML = '';
+            return;
+        }
+
+        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(val)}&limit=5`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        container.innerHTML = '';
+        data.features.forEach(item => {
+            const label = item.properties.name + 
+                (item.properties.city ? ', ' + item.properties.city : '') + 
+                (item.properties.country ? ', ' + item.properties.country : '');
+            
+            const div = document.createElement('div');
+            div.textContent = label;
+            div.addEventListener('click', () => {
+                input.value = label;
+                input.dataset.lat = item.geometry.coordinates[1];
+                input.dataset.lon = item.geometry.coordinates[0];
+                container.innerHTML = '';
+            });
+            container.appendChild(div);
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target !== input) {
+            container.innerHTML = '';
+        }
+    });
 }
 
+setupAutocomplete(originInput);
+setupAutocomplete(destinationInput);
+
+// === Obter coordenadas do input (se selecionado do autocomplete) ===
+function getCoordinatesFromInput(input) {
+    const lat = input.dataset.lat;
+    const lon = input.dataset.lon;
+    if (lat && lon) {
+        return { lat: parseFloat(lat), lon: parseFloat(lon) };
+    }
+    return null;
+}
+
+// === Função fallback para geocodificar ===
+async function geocode(query) {
+    const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=1`;
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data.features && data.features.length > 0) {
+        const coord = data.features[0].geometry.coordinates;
+        return { lat: coord[1], lon: coord[0] };
+    }
+    return null;
+}
+
+// === Calcular Rota ===
 async function calculateRoute() {
-    const origin = document.getElementById('origin').value;
-    const destination = document.getElementById('destination').value;
-    const mode = document.getElementById('transportMode').value;
+    const origin = originInput.value.trim();
+    const destination = destinationInput.value.trim();
+    const transportMode = document.getElementById('transportMode').value;
 
-    const originCoords = await geocode(origin);
-    const destinationCoords = await geocode(destination);
+    if (!origin || !destination) {
+        alert("Preencha origem e destino.");
+        return;
+    }
 
-    if (!originCoords || !destinationCoords) return;
+    const origemCoords = getCoordinatesFromInput(originInput) || await geocode(origin);
+    const destinoCoords = getCoordinatesFromInput(destinationInput) || await geocode(destination);
 
-    const url = `https://api.openrouteservice.org/v2/directions/${mode}?api_key=${apiKey}&start=${originCoords[1]},${originCoords[0]}&end=${destinationCoords[1]},${destinationCoords[0]}`;
+    if (!origemCoords || !destinoCoords) {
+        alert("Não foi possível encontrar os endereços.");
+        return;
+    }
+
+    const apiKey = "5b3ce3597851110001cf6248dfab5e635474467b8043c2a84f9bc4a4";
+
+    const url = `https://api.openrouteservice.org/v2/directions/${transportMode}?api_key=${apiKey}&start=${origemCoords.lon},${origemCoords.lat}&end=${destinoCoords.lon},${destinoCoords.lat}`;
 
     const response = await fetch(url);
-    const json = await response.json();
+    if (!response.ok) {
+        alert("Erro ao buscar rota.");
+        return;
+    }
 
-    const coords = json.features[0].geometry.coordinates;
-    const latlngs = coords.map(coord => [coord[1], coord[0]]);
+    const json = await response.json();
+    const coords = json.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
 
     if (routeLayer) {
         map.removeLayer(routeLayer);
     }
 
-    routeLayer = L.polyline(latlngs, {color: 'blue', weight: 5}).addTo(map);
+    routeLayer = L.polyline(coords, { color: 'blue', weight: 5 }).addTo(map);
     map.fitBounds(routeLayer.getBounds());
 
-    // Mostrar distância e duração
-    const summary = json.features[0].properties.summary;
-    const distance = (summary.distance / 1000).toFixed(2);
-    const duration = (summary.duration / 60).toFixed(1);
+    const distance = (json.features[0].properties.summary.distance / 1000).toFixed(2);
+    const duration = (json.features[0].properties.summary.duration / 60).toFixed(1);
 
-    document.getElementById('routeInfo').innerHTML = `🛣️ Distância: <b>${distance} km</b> | ⏱️ Duração: <b>${duration} min</b>`;
+    routeInfo.textContent = `Distância: ${distance} km | Tempo estimado: ${duration} minutos`;
 }
 
+// === Ativar/desativar rastreamento ===
 function startTracking() {
     if (!navigator.geolocation) {
-        alert('Geolocalização não suportada no seu navegador.');
+        trackingStatus.style.display = 'inline';
+        trackingStatus.textContent = "Geolocalização não suportada";
+        trackingStatus.className = "text-danger fw-semibold";
         return;
     }
 
-    if (watchId) {
+    if (watchId !== null) {
         navigator.geolocation.clearWatch(watchId);
+        watchId = null;
+        if (currentPositionMarker) {
+            map.removeLayer(currentPositionMarker);
+            currentPositionMarker = null;
+        }
+
+        btnIcon.className = "bi bi-geo-alt";
+        btnText.textContent = "Ativar Localização";
+        trackingStatus.style.display = 'none';
+        return;
     }
 
-    watchId = navigator.geolocation.watchPosition(
-        (position) => {
-            const {latitude, longitude} = position.coords;
+    watchId = navigator.geolocation.watchPosition(position => {
+        const { latitude, longitude } = position.coords;
 
-            if (userMarker) {
-                userMarker.setLatLng([latitude, longitude]);
-            } else {
-                userMarker = L.marker([latitude, longitude], {
-                    title: 'Sua localização',
-                    icon: L.icon({
-                        iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
-                        iconSize: [32, 32],
-                        iconAnchor: [16, 32]
-                    })
-                }).addTo(map);
-            }
-        },
-        (error) => {
-            alert('Erro ao obter localização: ' + error.message);
-        },
-        {
-            enableHighAccuracy: true
+        if (currentPositionMarker) {
+            currentPositionMarker.setLatLng([latitude, longitude]);
+        } else {
+            currentPositionMarker = L.marker([latitude, longitude]).addTo(map)
+                .bindPopup('Você está aqui').openPopup();
         }
-    );
-}
 
-function saveRoute() {
-    const origin = document.getElementById('origin').value;
-    const destination = document.getElementById('destination').value;
-    const mode = document.getElementById('transportMode').value;
+        map.setView([latitude, longitude], 15);
 
-    if (origin && destination) {
-        const savedRoutes = JSON.parse(localStorage.getItem('routes') || '[]');
-        savedRoutes.push({origin, destination, mode});
-        localStorage.setItem('routes', JSON.stringify(savedRoutes));
-        alert('Rota salva com sucesso!');
-    } else {
-        alert('Preencha origem e destino antes de salvar.');
-    }
-}
+        trackingStatus.style.display = 'inline';
+        trackingStatus.textContent = "Localização ativa";
+        trackingStatus.className = "text-success fw-semibold";
 
-// Autocomplete básico (sugestão simplificada)
-['origin', 'destination'].forEach(id => {
-    const input = document.getElementById(id);
-    input.addEventListener('input', async () => {
-        const value = input.value;
-        if (value.length < 3) return;
-        const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(value)}`;
-        const response = await fetch(url);
-        const data = await response.json();
-
-        const datalistId = id + 'List';
-        let datalist = document.getElementById(datalistId);
-        if (!datalist) {
-            datalist = document.createElement('datalist');
-            datalist.id = datalistId;
-            document.body.appendChild(datalist);
-            input.setAttribute('list', datalistId);
-        }
-        datalist.innerHTML = '';
-        data.slice(0, 5).forEach(item => {
-            const option = document.createElement('option');
-            option.value = item.display_name;
-            datalist.appendChild(option);
-        });
+    }, error => {
+        trackingStatus.style.display = 'inline';
+        trackingStatus.textContent = "Erro ao obter localização";
+        trackingStatus.className = "text-danger fw-semibold";
+    }, {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 5000
     });
-});
+
+    btnIcon.className = "bi bi-geo-alt-fill text-success";
+    btnText.textContent = "Parar Localização";
+}
+
+// === Eventos ===
+document.getElementById('btnCalculate').addEventListener('click', calculateRoute);
+btnTracking.addEventListener('click', startTracking);
