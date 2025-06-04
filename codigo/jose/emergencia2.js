@@ -20,8 +20,8 @@ function salvarCaminhoneiro(e) {
         return;
     }
 
-    if (ano < 1980 || ano > 2025) {
-        alert("Ano inválido. Deve estar entre 1980 e 2025.");
+    if (ano < 0 || ano > 100) {
+        alert("Ano inválido. Deve estar entre 0 e 100 Trabalhados.");
         return;
     }
 
@@ -58,6 +58,7 @@ function carregarCaminhoneiros() {
             <td>${item.rota}</td>
             <td>${item.infoAdicional}</td>
             <td>
+                <button type="button" onclick="Ligaremergencia(${index})">Ligar</button>
                 <button type="button" onclick="editarCaminhoneiro(${index})">Editar</button>
                 <button type="button" onclick="excluirCaminhoneiro(${index})">Excluir</button>
             </td>
@@ -83,10 +84,16 @@ function editarCaminhoneiro(index) {
 }
 
 function excluirCaminhoneiro(index) {
-    if (!confirm("Tem certeza que deseja excluir este registro?")) return;
+    if (!confirm("Tem certeza que deseja excluir este contato de emergência?")) return;
 
     let lista = JSON.parse(localStorage.getItem('caminhoneiros')) || [];
     lista.splice(index, 1);
     localStorage.setItem('caminhoneiros', JSON.stringify(lista));
     carregarCaminhoneiros();
+}
+function Ligaremergencia(numero){
+    const confirmar = confirm(`Você deseja ligar para ${numero}?`);
+    if (cofirmar){
+        window.location.href = `tel:${numero}`;
+    }
 }
