@@ -73,7 +73,7 @@ header, footer {
     background-color: #e9e9e9;
 }
 
-/* Botões e inputs no formulário */
+/* Inputs e botões */
 input.form-control,
 #transportMode,
 button.btn {
@@ -81,25 +81,19 @@ button.btn {
     font-weight: 600;
 }
 
-/* Estilo moderno para o select de transporte */
+/* Select transporte */
 #transportMode {
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     background-color: #fff;
     border: 2px solid #1d4ed8;
     border-radius: 8px;
     padding: 8px 40px 8px 15px;
-    font-size: 1rem;
-    font-weight: 600;
     color: #1d4ed8;
     cursor: pointer;
-    position: relative;
     background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg fill="%231d4ed8" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M7 10l5 5 5-5z"/%3e%3c/svg%3e');
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 16px;
-    transition: border-color 0.3s ease;
 }
 
 #transportMode:hover,
@@ -108,23 +102,7 @@ button.btn {
     outline: none;
 }
 
-/* Responsividade no celular */
-@media (max-width: 767.98px) {
-    #transportMode {
-        width: 100%;
-        margin-bottom: 8px;
-    }
-}
-
-/* Botões com espaço e tamanho adequado */
-button#btnCalculate,
-button#btnTracking {
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
+/* Botões */
 button#btnCalculate {
     background-color: #1d4ed8;
     border: none;
@@ -139,44 +117,35 @@ button#btnTracking {
     border: 2px solid #1d4ed8;
     background-color: transparent;
     color: #1d4ed8;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 button#btnTracking:hover {
     background-color: #e0e7ff;
 }
 
-/* Estado ligado - botão preenchido azul */
-button#btnTracking.btn-success {
-    background-color: #1d4ed8;
-    color: white;
-    border-color: #1d4ed8;
+.btn-current-location {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 2px;
+    font-size: 0.8rem;
 }
 
-button#btnTracking.btn-success:hover {
-    background-color: #2563eb;
-    border-color: #2563eb;
-}
-
-/* Estado desligado com borda e texto azul (outline) */
-button#btnTracking.btn-outline-success {
-    background-color: transparent;
-    color: #1d4ed8;
-    border-color: #1d4ed8;
-}
-
-button#btnTracking.btn-outline-success:hover {
-    background-color: #e0e7ff;
-    color: #1d4ed8;
-}
-
-/* Flex ajustado para telas pequenas (botões empilhados) */
+/* Responsividade */
 @media (max-width: 767.98px) {
+    #transportMode {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
     .col-md-2.d-flex.gap-2 {
         flex-direction: column !important;
         gap: 8px !important;
+    }
+
+    .btn-current-location {
+        position: static;
+        margin-top: 5px;
+        width: 100%;
     }
 }

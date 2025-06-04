@@ -14,7 +14,7 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    <!-- Custom CSS -->
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="mapainterativo.css" />
 </head>
 <body>
@@ -27,9 +27,15 @@
             <div class="row align-items-center g-2">
                 <div class="col-md-4 col-12 mb-2 mb-md-0 position-relative">
                     <input type="text" id="origin" class="form-control" placeholder="Origem" autocomplete="off" />
+                    <button class="btn btn-sm btn-outline-secondary btn-current-location" onclick="useCurrentLocation('origin')">
+                        📍 Usar Localização Atual
+                    </button>
                 </div>
                 <div class="col-md-4 col-12 mb-2 mb-md-0 position-relative">
                     <input type="text" id="destination" class="form-control" placeholder="Destino" autocomplete="off" />
+                    <button class="btn btn-sm btn-outline-secondary btn-current-location" onclick="useCurrentLocation('destination')">
+                        📍 Usar Localização Atual
+                    </button>
                 </div>
                 <div class="col-md-2 col-6 mb-2 mb-md-0">
                     <select id="transportMode" class="form-select">
