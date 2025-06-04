@@ -1,200 +1,64 @@
-/* Reset básico */
-* {
+/* Estilo básico da página */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f4f6;
-  color: #111827;
-  padding: 20px;
-}
-
-header {
+header, footer {
+  background-color: #0066cc;
+  color: white;
+  padding: 1rem;
   text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  color: #1d4ed8;
-  font-size: 2.5rem;
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  padding: 1rem;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* Formulário de registro */
-.registro-form form {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  width: 350px;
+/* Formulário */
+.registro-form, .busca-endereco, .mapa-preview {
+  margin-bottom: 2rem;
 }
 
-.registro-form h2 {
-  margin-bottom: 15px;
-  color: #111827;
-}
-
-.registro-form label {
+label {
   display: block;
-  margin-top: 10px;
-  font-weight: 600;
+  margin-top: 0.5rem;
 }
 
-.registro-form input,
-.registro-form select,
-.registro-form textarea {
+input[type="text"], select, textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 1rem;
-  resize: vertical;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  box-sizing: border-box;
 }
 
-.registro-form button {
-  margin-top: 15px;
-  width: 100%;
-  padding: 12px;
-  background-color: #1d4ed8;
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.registro-form button:hover {
-  background-color: #2563eb;
-}
-
-/* Mapa */
-.mapa-preview {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  width: 500px;
-  max-width: 100%;
-}
-
-.mapa-preview h2 {
-  margin-bottom: 10px;
-}
-
+/* MAPA precisa de altura! */
 #mapa {
-  height: 300px;
-  background-color: #e5e7eb;
-  border-radius: 8px;
-}
-
-/* Locais Registrados */
-.locais-registrados {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   width: 100%;
-  max-width: 900px;
+  height: 300px; /* ESSA linha é ESSENCIAL */
+  border: 1px solid #ccc;
+  margin-top: 1rem;
 }
 
-.locais-registrados h2 {
-  margin-bottom: 15px;
-  color: #111827;
-}
-
-#locaisContainer {
+ul#locaisContainer {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-#locaisContainer li {
-  background-color: #f0f9ff;
-  border-left: 5px solid #1d4ed8;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 12px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-}
-
-#locaisContainer li.perigoso {
-  border-left-color: #dc2626;
-  background-color: #fee2e2;
-}
-
-#locaisContainer .info {
-  flex-grow: 1;
-  margin-right: 10px;
-  word-break: break-word;
-}
-
-#locaisContainer .info strong {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-
-#locaisContainer .info p {
-  margin-bottom: 5px;
-}
-
-#locaisContainer .info small {
-  color: #6b7280;
-  font-size: 0.875rem;
-}
-
-#locaisContainer button {
-  background-color: #dc2626;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: background-color 0.3s ease;
-}
-
-#locaisContainer button:hover {
-  background-color: #b91c1c;
-}
-
-#locaisContainer button + button {
-  margin-left: 8px;
-}
-footer {
-  text-align: center;
-  padding: 15px 20px;
-  background-color: transparent; 
-  color: #6b7280;
-  width: 100%;
-}
-/* Responsividade */
-@media (max-width: 900px) {
-  main {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .registro-form form,
-  .mapa-preview,
-  .locais-registrados {
-    width: 100%;
-    max-width: 600px;
-  }
+ul#locaisContainer li {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
 }
 

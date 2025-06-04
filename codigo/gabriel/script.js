@@ -1,3 +1,4 @@
+
 let mapa = L.map('mapa').setView([-19.9227, -43.9451], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -6,83 +7,30 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 let marcador = null;
 let editandoIndex = null;
+let locais = JSON.parse(localStorage.getItem("locais")) || [];
 
-mapa.on('click', function (e) {
-  const tipo = document.getElementById("tipo").value;
-  if (!tipo) {
-    alert("Selecione o tipo de local antes de marcar no mapa.");
-    return;
-  }
+function adicionarMarcador(local) {
+  const icone = L.divIcon({
+    html: local.tipo === 'seguro' ? '✅' : '⚠️',
+    className: 'map-icon',
+    iconSize: [24, 24],
+    iconAnchor: [12, 12]
+  });
 
-  if (marcador) mapa.removeLayer(marcador);
-
-  const cor = tipo === 'seguro' ? '00cc00' : 'cc0000';
-
-  marcador = L.marker(e.latlng, {
-    icon: L.icon({
-      iconUrl: `https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|${cor}`,
-      iconSize: [21, 34],
-      iconAnchor: [10, 34]
-    })
-  }).addTo(mapa);
-
-  document.getElementById('lat').value = e.latlng.lat;
-  document.getElementById('lng').value = e.latlng.lng;
-});
-
-function buscarEndereco() {
-  const endereco = document.getElementById('endereco').value;
-  if (!endereco) {
-    alert("Digite um endereço.");
-    return;
-  }
-
-  const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(endereco)}`;
-
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      if (data && data.length > 0) {
-        const lat = parseFloat(data[0].lat);
-        const lon = parseFloat(data[0].lon);
-
-        mapa.setView([lat, lon], 16);
-
-        if (marcador) mapa.removeLayer(marcador);
-
-        const tipo = document.getElementById("tipo").value || "seguro";
-        const cor = tipo === 'perigoso' ? 'cc0000' : '00cc00';
-
-        marcador = L.marker([lat, lon], {
-          icon: L.icon({
-            iconUrl: `https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|${cor}`,
-            iconSize: [21, 34],
-            iconAnchor: [10, 34]
-          })
-        }).addTo(mapa);
-
-        document.getElementById('lat').value = lat;
-        document.getElementById('lng').value = lon;
-      } else {
-        alert("Endereço não encontrado.");
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      alert("Erro ao buscar o endereço.");
-    });
+  const marker = L.marker([local.lat, local.lng], { icon: icone }).addTo(mapa);
+  marker.bindPopup(`<strong>${local.tipo.toUpperCase()}</strong><br>${local.descricao}`);
+  return marker;
 }
 
-const form = document.querySelector(".registro-form");
-const locaisContainer = document.createElement("ul");
-locaisContainer.id = "locaisContainer";
-document.querySelector("main").appendChild(locaisContainer);
-
 function carregarLocais() {
-  const locais = JSON.parse(localStorage.getItem("locais")) || [];
-  locaisContainer.innerHTML = "";
+  locais = JSON.parse(localStorage.getItem("locais")) || [];
+  document.getElementById("locaisContainer").innerHTML = "";
+  mapa.eachLayer(layer => {
+    if (layer instanceof L.Marker && layer !== marcador) mapa.removeLayer(layer);
+  });
 
   locais.forEach((local, index) => {
+    adicionarMarcador(local);
     const li = document.createElement("li");
     li.innerHTML = `
       <strong>${local.tipo.toUpperCase()} - ${local.nome}</strong><br>
@@ -91,45 +39,47 @@ function carregarLocais() {
       <button onclick="editarLocal(${index})">Editar</button>
       <button onclick="removerLocal(${index})">Remover</button>
     `;
-    locaisContainer.appendChild(li);
+    document.getElementById("locaisContainer").appendChild(li);
   });
 }
 
-function removerLocal(index) {
-  const locais = JSON.parse(localStorage.getItem("locais")) || [];
-  locais.splice(index, 1);
-  localStorage.setItem("locais", JSON.stringify(locais));
-  carregarLocais();
+function filtrarLocais() {
+  const filtro = document.getElementById("filtroTipo").value;
+  mapa.eachLayer(layer => {
+    if (layer instanceof L.Marker && layer !== marcador) mapa.removeLayer(layer);
+  });
+
+  locais.forEach(local => {
+    if (filtro === "todos" || local.tipo === filtro) adicionarMarcador(local);
+  });
 }
 
-function editarLocal(index) {
-  const locais = JSON.parse(localStorage.getItem("locais")) || [];
-  const local = locais[index];
+document.getElementById("marcarLocal").addEventListener("click", () => {
+  mapa.once('click', function (e) {
+    const tipo = document.getElementById("tipo").value;
+    if (!tipo) {
+      alert("Selecione o tipo de local antes de marcar.");
+      return;
+    }
 
-  document.getElementById("tipo").value = local.tipo;
-  document.getElementById("nome").value = local.nome;
-  document.getElementById("descricao").value = local.descricao;
-  document.getElementById("lat").value = local.lat;
-  document.getElementById("lng").value = local.lng;
-  editandoIndex = index;
+    if (marcador) mapa.removeLayer(marcador);
 
-  const latlng = L.latLng(local.lat, local.lng);
-  mapa.setView(latlng, 16);
-  if (marcador) mapa.removeLayer(marcador);
+    const icone = L.divIcon({
+      html: tipo === 'seguro' ? '✅' : '⚠️',
+      className: 'map-icon',
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
 
-  const cor = local.tipo === 'seguro' ? '00cc00' : 'cc0000';
-  marcador = L.marker(latlng, {
-    icon: L.icon({
-      iconUrl: `https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|${cor}`,
-      iconSize: [21, 34],
-      iconAnchor: [10, 34]
-    })
-  }).addTo(mapa);
-}
+    marcador = L.marker(e.latlng, { icon: icone }).addTo(mapa);
 
-form.addEventListener("submit", function (e) {
+    document.getElementById("lat").value = e.latlng.lat;
+    document.getElementById("lng").value = e.latlng.lng;
+  });
+});
+
+document.getElementById("formRegistro").addEventListener("submit", function (e) {
   e.preventDefault();
-
   const tipo = document.getElementById("tipo").value;
   const nome = document.getElementById("nome").value;
   const descricao = document.getElementById("descricao").value;
@@ -137,12 +87,11 @@ form.addEventListener("submit", function (e) {
   const lng = parseFloat(document.getElementById("lng").value);
 
   if (!tipo || !nome || !descricao || isNaN(lat) || isNaN(lng)) {
-    alert("Preencha todos os campos e clique no mapa para selecionar a localização.");
+    alert("Preencha todos os campos e marque a localização no mapa.");
     return;
   }
 
   const novoLocal = { tipo, nome, descricao, lat, lng };
-  const locais = JSON.parse(localStorage.getItem("locais")) || [];
 
   if (editandoIndex !== null) {
     locais[editandoIndex] = novoLocal;
@@ -152,7 +101,7 @@ form.addEventListener("submit", function (e) {
   }
 
   localStorage.setItem("locais", JSON.stringify(locais));
-  form.reset();
+  e.target.reset();
   if (marcador) {
     mapa.removeLayer(marcador);
     marcador = null;
@@ -160,6 +109,51 @@ form.addEventListener("submit", function (e) {
   carregarLocais();
 });
 
-// Inicializa
-carregarLocais();
+function removerLocal(index) {
+  locais.splice(index, 1);
+  localStorage.setItem("locais", JSON.stringify(locais));
+  carregarLocais();
+}
 
+function editarLocal(index) {
+  const local = locais[index];
+  document.getElementById("tipo").value = local.tipo;
+  document.getElementById("nome").value = local.nome;
+  document.getElementById("descricao").value = local.descricao;
+  document.getElementById("lat").value = local.lat;
+  document.getElementById("lng").value = local.lng;
+  editandoIndex = index;
+  mapa.setView([local.lat, local.lng], 16);
+
+  if (marcador) mapa.removeLayer(marcador);
+  marcador = L.marker([local.lat, local.lng], {
+    icon: L.divIcon({
+      html: local.tipo === 'seguro' ? '✅' : '⚠️',
+      className: 'map-icon',
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    })
+  }).addTo(mapa);
+}
+
+function buscarEndereco() {
+  const endereco = document.getElementById("endereco").value;
+  if (!endereco) return alert("Digite um endereço.");
+
+  const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(endereco)}`;
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      if (data.length > 0) {
+        const lat = parseFloat(data[0].lat);
+        const lng = parseFloat(data[0].lon);
+        mapa.setView([lat, lng], 16);
+      } else {
+        alert("Endereço não encontrado.");
+      }
+    })
+    .catch(() => alert("Erro ao buscar o endereço."));
+}
+
+carregarLocais();

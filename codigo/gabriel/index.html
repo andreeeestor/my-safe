@@ -4,14 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MySafe - Registro de Locais</title>
-
-  <!-- Estilo Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <!-- Estilo personalizado -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-
   <header>
     <h1>MySafe</h1>
     <p>Registre locais seguros e perigosos no trânsito</p>
@@ -20,6 +16,14 @@
   <main>
     <form class="registro-form" id="formRegistro">
       <h2>Registrar Local</h2>
+
+      <label for="usuario">Tipo de Usuário:</label>
+      <select id="usuario" name="usuario" required>
+        <option value="">Selecione</option>
+        <option value="Ciclista">Ciclista</option>
+        <option value="Motorista">Motorista</option>
+        <option value="Pedestre">Pedestre</option>
+      </select>
 
       <label for="tipo">Tipo de Local:</label>
       <select id="tipo" name="tipo" required>
@@ -34,14 +38,21 @@
       <label for="descricao">Descrição:</label>
       <textarea id="descricao" name="descricao" rows="4" required placeholder="Descreva o local..."></textarea>
 
-      <label for="imagem">Imagem (opcional):</label>
-      <input type="file" id="imagem" name="imagem" accept="image/*" />
-
       <input type="hidden" id="lat" name="lat">
       <input type="hidden" id="lng" name="lng">
 
+      <button type="button" id="marcarLocal">Marcar Local</button>
       <button type="submit">Registrar Local</button>
     </form>
+
+    <section class="filtro">
+      <h2>Filtrar Locais</h2>
+      <select id="filtroTipo" onchange="filtrarLocais()">
+        <option value="todos">Todos</option>
+        <option value="seguro">Somente Seguros</option>
+        <option value="perigoso">Somente Perigosos</option>
+      </select>
+    </section>
 
     <section class="busca-endereco">
       <h2>Buscar Endereço</h2>
@@ -51,24 +62,12 @@
 
     <section class="mapa-preview">
       <h2>Mapa Interativo</h2>
-      <div id="mapa" style="height: 300px;"></div>
+      <div id="mapa"></div>
     </section>
 
-    <section class="locais-registrados">
-    <h2>Locais Registrados</h2>
-    <ul id="locaisContainer"></ul>
-    <li>
-  <div class="info">
-    <strong>PERIGOSO - Estádio</strong>
-    <p>Descrição do local aqui...</p>
-    <small>Localização: -19.8659, -43.9710</small>
-  </div>
-  <div class="acoes">
-    <button onclick="editarLocal('idDoLocal')">Editar</button>
-    <button onclick="removerLocal('idDoLocal')">Remover</button>
-  </div>
-</li>
-
+    <section>
+      <h2>Locais Registrados</h2>
+      <ul id="locaisContainer"></ul>
     </section>
   </main>
 
@@ -76,7 +75,6 @@
     <p>&copy; 2025 MySafe - Segurança no Trânsito</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
