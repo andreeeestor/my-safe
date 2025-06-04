@@ -9,7 +9,7 @@ let routeLayer = null;
 let currentPositionMarker = null;
 let watchId = null;
 
-// === Referências DOM ===
+// Referências DOM
 const originInput = document.getElementById('origin');
 const destinationInput = document.getElementById('destination');
 const btnTracking = document.getElementById('btnTracking');
@@ -17,8 +17,9 @@ const btnIcon = document.getElementById('btnIcon');
 const btnText = document.getElementById('btnText');
 const trackingStatus = document.getElementById('trackingStatus');
 const routeInfo = document.getElementById('routeInfo');
+const btnClear = document.getElementById('btnClear');
 
-// === Autocomplete ===
+// === Função de autocomplete com Photon ===
 function setupAutocomplete(input) {
     const container = document.createElement('div');
     container.classList.add('autocomplete-items');
@@ -64,7 +65,7 @@ function setupAutocomplete(input) {
 setupAutocomplete(originInput);
 setupAutocomplete(destinationInput);
 
-// === Obter coordenadas do input ===
+// === Obter coordenadas do input (se selecionado do autocomplete) ===
 function getCoordinatesFromInput(input) {
     const lat = input.dataset.lat;
     const lon = input.dataset.lon;
@@ -74,7 +75,7 @@ function getCoordinatesFromInput(input) {
     return null;
 }
 
-// === Geocode fallback ===
+// === Função fallback para geocodificar ===
 async function geocode(query) {
     const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=1`;
     const response = await fetch(url);
@@ -86,29 +87,7 @@ async function geocode(query) {
     return null;
 }
 
-// === Usar localização atual ===
-function useCurrentLocation(inputId) {
-    if (!navigator.geolocation) {
-        alert("Geolocalização não suportada.");
-        return;
-    }
-
-    navigator.geolocation.getCurrentPosition(position => {
-        const { latitude, longitude } = position.coords;
-        const input = document.getElementById(inputId);
-        input.value = 'Minha Localização';
-        input.dataset.lat = latitude;
-        input.dataset.lon = longitude;
-
-        L.marker([latitude, longitude]).addTo(map)
-            .bindPopup(`${inputId === 'origin' ? 'Origem' : 'Destino'}: Minha Localização`)
-            .openPopup();
-    }, () => {
-        alert("Não foi possível obter sua localização.");
-    });
-}
-
-// === Calcular rota ===
+// === Calcular Rota ===
 async function calculateRoute() {
     const origin = originInput.value.trim();
     const destination = destinationInput.value.trim();
@@ -153,7 +132,16 @@ async function calculateRoute() {
     routeInfo.textContent = `Distância: ${distance} km | Tempo estimado: ${duration} minutos`;
 }
 
-// === Rastreamento ===
+// === Limpar Rota ===
+function clearRoute() {
+    if (routeLayer) {
+        map.removeLayer(routeLayer);
+        routeLayer = null;
+    }
+    routeInfo.textContent = '';
+}
+
+// === Ativar/desativar rastreamento ===
 function startTracking() {
     if (!navigator.geolocation) {
         trackingStatus.style.display = 'inline';
@@ -182,16 +170,11 @@ function startTracking() {
         if (currentPositionMarker) {
             currentPositionMarker.setLatLng([latitude, longitude]);
         } else {
-            currentPositionMarker = L.marker([latitude, longitude], {
-                icon: L.icon({
-                    iconUrl: 'https://cdn-icons-png.flaticon.com/512/64/64113.png',
-                    iconSize: [30, 30],
-                    iconAnchor: [15, 30]
-                })
-            }).addTo(map).bindPopup('Você está aqui').openPopup();
+            currentPositionMarker = L.marker([latitude, longitude]).addTo(map)
+                .bindPopup('Você está aqui').openPopup();
         }
 
-        map.setView([latitude, longitude]);
+        map.setView([latitude, longitude], 15);
 
         trackingStatus.style.display = 'inline';
         trackingStatus.textContent = "Localização ativa";
@@ -214,3 +197,4 @@ function startTracking() {
 // === Eventos ===
 document.getElementById('btnCalculate').addEventListener('click', calculateRoute);
 btnTracking.addEventListener('click', startTracking);
+btnClear.addEventListener('click', clearRoute);

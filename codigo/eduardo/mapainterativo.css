@@ -123,12 +123,15 @@ button#btnTracking:hover {
     background-color: #e0e7ff;
 }
 
-.btn-current-location {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    margin-top: 2px;
-    font-size: 0.8rem;
+/* Input-group buttons */
+.input-group .btn {
+    border: 2px solid #1d4ed8;
+    background-color: #f9fafb;
+    color: #1d4ed8;
+}
+
+.input-group .btn:hover {
+    background-color: #e0e7ff;
 }
 
 /* Responsividade */
@@ -141,11 +144,5 @@ button#btnTracking:hover {
     .col-md-2.d-flex.gap-2 {
         flex-direction: column !important;
         gap: 8px !important;
-    }
-
-    .btn-current-location {
-        position: static;
-        margin-top: 5px;
-        width: 100%;
     }
 }
