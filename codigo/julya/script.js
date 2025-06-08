@@ -1,130 +1,174 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const API_URL = 'http://localhost:3000/avaliacoes';
-    const listaAvaliacoes = document.getElementById('lista-avaliacoes');
+    // Elementos do DOM
+    const form = document.getElementById('denunciaForm');
+    const denunciasList = document.getElementById('denuncias-list');
+    const searchInput = document.getElementById('search');
+    const searchBtn = document.getElementById('search-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const formTitle = document.getElementById('form-title');
+    const saveBtn = document.getElementById('save-btn');
     
-    carregarAvaliacoes();
-
-    // adiciona nova avaliação 
-    document.getElementById('adicionar').addEventListener('click', function() {
-        const nome = document.getElementById('nome').value;
-        const nota = document.getElementById('nota').value;
-        const comentario = document.getElementById('comentario').value;
-        
-        // validação dos campos
-        if (!validarFormulario(nome, nota, comentario)) {
-            return; 
-        }
-
-        const avaliacao = {
-            nome: nome,
-            tipo: document.getElementById('tipo').value,
-            nota: parseInt(nota),
-            comentario: comentario,
-            data: new Date().toISOString()
-        };
-
-        fetch(API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(avaliacao)
-        })
-        .then(() => {
-            limparFormulario();
-            carregarAvaliacoes();
-        })
-        .catch(error => {
-            console.error('Erro ao adicionar avaliação:', error);
-            alert('Erro ao adicionar avaliação. Tente novamente.');
-        });
+    // Variável para controle de edição
+    let editingId = null;
+    
+    // Carrega denúncias ao iniciar
+    loadDenuncias();
+    
+    // Eventos
+    form.addEventListener('submit', handleSubmit);
+    searchBtn.addEventListener('click', handleSearch);
+    cancelBtn.addEventListener('click', resetForm);
+    searchInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') handleSearch();
     });
-
-    // função de validação do formulário
-    function validarFormulario(nome, nota, comentario) {
-        let valido = true;
+    
+    // Função para carregar denúncias
+    function loadDenuncias(filter = '') {
+        const denuncias = getDenuncias();
+        denunciasList.innerHTML = '';
         
-        document.querySelectorAll('.erro-validacao').forEach(el => el.remove());
-        
-        // validação do nome
-        if (!nome || nome.trim() === '') {
-            mostrarErro('nome', 'Por favor, informe seu nome');
-            valido = false;
+        if (denuncias.length === 0) {
+            denunciasList.innerHTML = '<div class="message">Nenhuma denúncia registrada ainda.</div>';
+            return;
         }
         
-        // validação da nota
-        if (!nota || isNaN(nota) || nota < 1 || nota > 5) {
-            mostrarErro('nota', 'Por favor, informe uma nota entre 1 e 5');
-            valido = false;
+        // Aplica filtro se existir
+        const filtered = filter 
+            ? denuncias.filter(d => 
+                d.nomeDenunciado.toLowerCase().includes(filter.toLowerCase()) || 
+                d.placa.toLowerCase().includes(filter.toLowerCase()))
+            : denuncias;
+        
+        if (filtered.length === 0) {
+            denunciasList.innerHTML = '<div class="message">Nenhuma denúncia encontrada.</div>';
+            return;
         }
         
-        return valido;
+      
+        filtered.sort((a, b) => new Date(b.data) - new Date(a.data));
+        
+        // Adiciona cada denúncia na lista
+        filtered.forEach(denuncia => {
+            const denunciaItem = document.createElement('div');
+            denunciaItem.className = 'denuncia-item';
+            
+            denunciaItem.innerHTML = `
+                <div class="denuncia-info nome">${denuncia.nomeDenunciado}</div>
+                <div class="denuncia-info placa">${denuncia.placa}</div>
+                <div class="denuncia-info motivo">${denuncia.motivo}</div>
+                <div class="denuncia-info data">${formatDate(denuncia.data)}</div>
+                <div class="actions-container">
+                    <button class="warning" onclick="editDenuncia('${denuncia.id}')">Editar</button>
+                    <button class="danger" onclick="deleteDenuncia('${denuncia.id}')">Excluir</button>
+                </div>
+            `;
+            
+            denunciasList.appendChild(denunciaItem);
+        });
     }
     
-    // Mostra mensagem de erro 
-    function mostrarErro(campoId, mensagem) {
-        const campo = document.getElementById(campoId);
-        const erro = document.createElement('div');
-        erro.className = 'erro-validacao';
-        erro.style.color = 'red';
-        erro.style.fontSize = '0.8em';
-        erro.style.marginTop = '5px';
-        erro.textContent = mensagem;
-        campo.insertAdjacentElement('afterend', erro);
+    // Função para lidar com o envio do formulário
+    function handleSubmit(e) {
+        e.preventDefault();
         
-        // Destaca o campo inválido
-        campo.style.border = '1px solid red';
-        setTimeout(() => {
-            campo.style.border = '';
-        }, 3000);
-    } // <-- Esta chave estava faltando no seu código original
-
-    // carrega avaliações
-    function carregarAvaliacoes() {
-        fetch(API_URL)
-            .then(response => response.json())
-            .then(avaliacoes => {
-                listaAvaliacoes.innerHTML = '';
-                avaliacoes.forEach(avaliacao => {
-                    const div = document.createElement('div');
-                    div.className = 'avaliacao';
-                    div.innerHTML = `
-                    <p><strong>${avaliacao.nome}</strong> (${avaliacao.tipo})</p>
-                    <p>Nota: ${'★'.repeat(avaliacao.nota)}${'☆'.repeat(5 - avaliacao.nota)}</p>
-                    <p>${avaliacao.comentario}</p>
-                    <p><small>${new Date(avaliacao.data).toLocaleString()}</small></p>
-                    <button onclick="editarAvaliacao('${avaliacao.id}')">Editar</button>
-                    <button onclick="excluirAvaliacao('${avaliacao.id}')">Excluir</button>
-`;
-                    listaAvaliacoes.appendChild(div);
-                });
-            });
+        const denuncia = {
+            id: editingId || Date.now().toString(),
+            nomeDenunciado: document.getElementById('nomeDenunciado').value,
+            placa: document.getElementById('placa').value,
+            motivo: document.getElementById('motivo').value,
+            descricao: document.getElementById('descricao').value,
+            data: document.getElementById('data').value || new Date().toISOString()
+        };
+        
+        saveDenuncia(denuncia);
+        resetForm();
+        loadDenuncias();
     }
-
-    // função para limpar formulário
-    function limparFormulario() {
-        document.getElementById('nome').value = '';
-        document.getElementById('nota').value = '';
-        document.getElementById('comentario').value = '';
+    
+    // Função para salvar denúncia no localStorage
+    function saveDenuncia(denuncia) {
+        const denuncias = getDenuncias();
+        const index = denuncias.findIndex(d => d.id === denuncia.id);
+        
+        if (index >= 0) {
+            // Atualiza denúncia existente
+            denuncias[index] = denuncia;
+        } else {
+            // Adiciona nova denúncia
+            denuncias.push(denuncia);
+        }
+        
+        localStorage.setItem('denuncias', JSON.stringify(denuncias));
+    }
+    
+    // Função para carregar denúncia no formulário para edição
+    window.editDenuncia = function(id) {
+        const denuncias = getDenuncias();
+        const denuncia = denuncias.find(d => d.id === id);
+        
+        if (denuncia) {
+            editingId = denuncia.id;
+            formTitle.textContent = 'Editar Denúncia';
+            saveBtn.textContent = 'Atualizar';
+            
+            document.getElementById('denunciaId').value = denuncia.id;
+            document.getElementById('nomeDenunciado').value = denuncia.nomeDenunciado;
+            document.getElementById('placa').value = denuncia.placa;
+            document.getElementById('motivo').value = denuncia.motivo;
+            document.getElementById('descricao').value = denuncia.descricao;
+            document.getElementById('data').value = denuncia.data;
+            
+            // Rolagem suave até o formulário
+            document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+    
+    // Função para excluir denúncia
+    window.deleteDenuncia = function(id) {
+        if (confirm('Tem certeza que deseja excluir esta denúncia?')) {
+            const denuncias = getDenuncias().filter(d => d.id !== id);
+            localStorage.setItem('denuncias', JSON.stringify(denuncias));
+            loadDenuncias();
+            
+            if (editingId === id) {
+                resetForm();
+            }
+        }
+    };
+    
+    // Função para buscar denúncias
+    function handleSearch() {
+        const filter = searchInput.value.trim();
+        loadDenuncias(filter);
+    }
+    
+    // Função para resetar o formulário
+    function resetForm() {
+        form.reset();
+        editingId = null;
+        formTitle.textContent = 'Nova Denúncia';
+        saveBtn.textContent = 'Salvar';
+        document.getElementById('denunciaId').value = '';
+        document.getElementById('data').value = '';
+    }
+    
+    // Função auxiliar para obter denúncias do localStorage
+    function getDenuncias() {
+        return JSON.parse(localStorage.getItem('denuncias')) || [];
+    }
+    
+    // Função para formatar data
+    function formatDate(dateString) {
+        const options = { 
+            day: '2-digit', 
+            month: '2-digit', 
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        return new Date(dateString).toLocaleString('pt-BR', options);
     }
 });
-
-// funções para editar e excluir
-function editarAvaliacao(id) {
-    const novoNome = prompt('Novo nome:');
-    if (novoNome) {
-        fetch(`http://localhost:3000/avaliacoes/${id}`)
-            .then(response => response.json())
-            .then(avaliacao => {
-                avaliacao.nome = novoNome;
-                return fetch(`http://localhost:3000/avaliacoes/${id}`, {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(avaliacao)
-                });
-            })
-            .then(() => location.reload());
-    }
-}
-
 
 // função para excluir avaliação
 async function excluirAvaliacao(id) {
