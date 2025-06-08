@@ -7,6 +7,24 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 let marcador = null;
 let editandoIndex = null;
+
+// Inicializa os locais com 10 padrões se for o primeiro acesso
+if (!localStorage.getItem("locais")) {
+  const locaisIniciais = [
+    { tipo: "seguro", nome: "Praça Central", descricao: "Área tranquila com boa iluminação.", lat: -19.9208, lng: -43.9378 },
+    { tipo: "perigoso", nome: "Rua das Palmeiras", descricao: "Alto índice de acidentes à noite.", lat: -19.9215, lng: -43.9401 },
+    { tipo: "seguro", nome: "Escola Modelo", descricao: "Faixa de pedestres sinalizada e presença de guardas.", lat: -19.9240, lng: -43.9385 },
+    { tipo: "perigoso", nome: "Avenida do Contorno", descricao: "Trânsito intenso e falta de calçada.", lat: -19.9267, lng: -43.9392 },
+    { tipo: "seguro", nome: "Ciclovia da Savassi", descricao: "Ciclovia bem sinalizada e protegida.", lat: -19.9352, lng: -43.9330 },
+    { tipo: "perigoso", nome: "Beco do Motoboy", descricao: "Local escuro e sem visibilidade.", lat: -19.9180, lng: -43.9420 },
+    { tipo: "seguro", nome: "Parque Municipal", descricao: "Grande movimentação e segurança pública.", lat: -19.9200, lng: -43.9370 },
+    { tipo: "perigoso", nome: "Rotatória da Rua 13", descricao: "Muitos acidentes com ciclistas.", lat: -19.9225, lng: -43.9415 },
+    { tipo: "seguro", nome: "Posto de Gasolina ABC", descricao: "Bem iluminado, com acesso para pedestres.", lat: -19.9190, lng: -43.9440 },
+    { tipo: "perigoso", nome: "Travessa Escura", descricao: "Sem iluminação e presença de buracos.", lat: -19.9255, lng: -43.9465 }
+  ];
+  localStorage.setItem("locais", JSON.stringify(locaisIniciais));
+}
+
 let locais = JSON.parse(localStorage.getItem("locais")) || [];
 
 function adicionarMarcador(local) {
