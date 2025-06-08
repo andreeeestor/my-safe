@@ -1,5 +1,4 @@
-
-let mapa = L.map('mapa').setView([-19.9227, -43.9451], 13);
+const mapa = L.map('mapa').setView([-19.9227, -43.9451], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
@@ -7,25 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 let marcador = null;
 let editandoIndex = null;
-
-// Inicializa os locais com 10 padrões se for o primeiro acesso
-if (!localStorage.getItem("locais")) {
-  const locaisIniciais = [
-    { tipo: "seguro", nome: "Praça Central", descricao: "Área tranquila com boa iluminação.", lat: -19.9208, lng: -43.9378 },
-    { tipo: "perigoso", nome: "Rua das Palmeiras", descricao: "Alto índice de acidentes à noite.", lat: -19.9215, lng: -43.9401 },
-    { tipo: "seguro", nome: "Escola Modelo", descricao: "Faixa de pedestres sinalizada e presença de guardas.", lat: -19.9240, lng: -43.9385 },
-    { tipo: "perigoso", nome: "Avenida do Contorno", descricao: "Trânsito intenso e falta de calçada.", lat: -19.9267, lng: -43.9392 },
-    { tipo: "seguro", nome: "Ciclovia da Savassi", descricao: "Ciclovia bem sinalizada e protegida.", lat: -19.9352, lng: -43.9330 },
-    { tipo: "perigoso", nome: "Beco do Motoboy", descricao: "Local escuro e sem visibilidade.", lat: -19.9180, lng: -43.9420 },
-    { tipo: "seguro", nome: "Parque Municipal", descricao: "Grande movimentação e segurança pública.", lat: -19.9200, lng: -43.9370 },
-    { tipo: "perigoso", nome: "Rotatória da Rua 13", descricao: "Muitos acidentes com ciclistas.", lat: -19.9225, lng: -43.9415 },
-    { tipo: "seguro", nome: "Posto de Gasolina ABC", descricao: "Bem iluminado, com acesso para pedestres.", lat: -19.9190, lng: -43.9440 },
-    { tipo: "perigoso", nome: "Travessa Escura", descricao: "Sem iluminação e presença de buracos.", lat: -19.9255, lng: -43.9465 }
-  ];
-  localStorage.setItem("locais", JSON.stringify(locaisIniciais));
-}
-
-let locais = JSON.parse(localStorage.getItem("locais")) || [];
+let locais = [];
 
 function adicionarMarcador(local) {
   const icone = L.divIcon({
@@ -37,11 +18,28 @@ function adicionarMarcador(local) {
 
   const marker = L.marker([local.lat, local.lng], { icon: icone }).addTo(mapa);
   marker.bindPopup(`<strong>${local.tipo.toUpperCase()}</strong><br>${local.descricao}`);
-  return marker;
 }
 
 function carregarLocais() {
   locais = JSON.parse(localStorage.getItem("locais")) || [];
+
+  // Se for a primeira vez, cria 10 locais iniciais
+  if (locais.length === 0) {
+    locais = [
+      { tipo: "seguro", nome: "Escola Estadual", descricao: "Local seguro para pedestres", lat: -19.924, lng: -43.935 },
+      { tipo: "perigoso", nome: "Avenida Central", descricao: "Muitos acidentes com ciclistas", lat: -19.926, lng: -43.945 },
+      { tipo: "seguro", nome: "Praça da Liberdade", descricao: "Boa sinalização", lat: -19.933, lng: -43.939 },
+      { tipo: "perigoso", nome: "Túnel Norte", descricao: "Pouca visibilidade", lat: -19.928, lng: -43.948 },
+      { tipo: "seguro", nome: "Ciclovia Sul", descricao: "Segura para ciclistas", lat: -19.918, lng: -43.941 },
+      { tipo: "perigoso", nome: "Rua sem calçada", descricao: "Perigo para pedestres", lat: -19.917, lng: -43.944 },
+      { tipo: "seguro", nome: "Parque Municipal", descricao: "Espaço tranquilo para andar", lat: -19.921, lng: -43.951 },
+      { tipo: "perigoso", nome: "Rodoviária", descricao: "Trânsito intenso e perigoso", lat: -19.915, lng: -43.938 },
+      { tipo: "seguro", nome: "Shopping Center", descricao: "Boa iluminação", lat: -19.927, lng: -43.936 },
+      { tipo: "perigoso", nome: "Esquina escura", descricao: "Falta de iluminação pública", lat: -19.916, lng: -43.949 }
+    ];
+    localStorage.setItem("locais", JSON.stringify(locais));
+  }
+
   document.getElementById("locaisContainer").innerHTML = "";
   mapa.eachLayer(layer => {
     if (layer instanceof L.Marker && layer !== marcador) mapa.removeLayer(layer);
@@ -175,3 +173,4 @@ function buscarEndereco() {
 }
 
 carregarLocais();
+
