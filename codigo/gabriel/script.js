@@ -48,13 +48,14 @@ function carregarLocais() {
   locais.forEach((local, index) => {
     adicionarMarcador(local);
     const li = document.createElement("li");
-    li.innerHTML = `
-      <strong>${local.tipo.toUpperCase()} - ${local.nome}</strong><br>
-      ${local.descricao}<br>
-      Localização: ${local.lat.toFixed(4)}, ${local.lng.toFixed(4)}<br>
-      <button onclick="editarLocal(${index})">Editar</button>
-      <button onclick="removerLocal(${index})">Remover</button>
-    `;
+ li.innerHTML = `
+  <strong>${local.tipo.toUpperCase()} - ${local.nome}</strong><br>
+  ${local.descricao}<br>
+  Localização: ${local.lat.toFixed(4)}, ${local.lng.toFixed(4)}<br>
+  <button class="btn-editar" onclick="editarLocal(${index})">Editar</button>
+  <button class="btn-remover" onclick="removerLocal(${index})">Remover</button>
+`;
+
     document.getElementById("locaisContainer").appendChild(li);
   });
 }

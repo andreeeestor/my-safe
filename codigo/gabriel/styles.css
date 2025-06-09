@@ -120,14 +120,30 @@ ul#locaisContainer button {
   padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
 }
-
-ul#locaisContainer button:nth-child(1) {
-  background-color: #1976d2; 
+button, .btn-editar, .btn-remover {
+  padding: 8px 16px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-ul#locaisContainer button:nth-child(2) {
-  background-color: #d32f2f; 
+button:hover, .btn-editar:hover, .btn-remover:hover {
+  opacity: 0.9;
 }
+
+/* Estilo para botões de ação */
+.btn-editar {
+  background-color: #f9a825; /* amarelo-alaranjado, como cones de trânsito */
+  color: white;
+}
+
+.btn-remover {
+  background-color: #d32f2f; /* vermelho alerta */
+  color: white;
+}
+
+
 footer {
   text-align: center;
   padding: 1rem;
@@ -141,3 +157,4 @@ footer {
   line-height: 1.5rem;
   text-align: center;
 }
+
