@@ -106,30 +106,43 @@ async function calculateRoute() {
         return;
     }
 
-    const apiKey = "5b3ce3597851110001cf6248dfab5e635474467b8043c2a84f9bc4a4";
+    const apiKey = "5b3ce3597851110001cf624842ba455521aa4b0b995fc1db1e6c5110";
 
     const url = `https://api.openrouteservice.org/v2/directions/${transportMode}?api_key=${apiKey}&start=${origemCoords.lon},${origemCoords.lat}&end=${destinoCoords.lon},${destinoCoords.lat}`;
 
-    const response = await fetch(url);
-    if (!response.ok) {
-        alert("Erro ao buscar rota.");
-        return;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error("Erro na API de rotas:", errorText);
+            alert("Erro ao buscar a rota. Verifique sua chave de API ou o modo de transporte.");
+            return;
+        }
+
+        const json = await response.json();
+        if (!json.features || json.features.length === 0) {
+            alert("Nenhuma rota encontrada.");
+            return;
+        }
+
+        const coords = json.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
+
+        if (routeLayer) {
+            map.removeLayer(routeLayer);
+        }
+
+        routeLayer = L.polyline(coords, { color: 'blue', weight: 5 }).addTo(map);
+        map.fitBounds(routeLayer.getBounds());
+
+        const distance = (json.features[0].properties.summary.distance / 1000).toFixed(2);
+        const duration = (json.features[0].properties.summary.duration / 60).toFixed(1);
+
+        routeInfo.textContent = `Distância: ${distance} km | Tempo estimado: ${duration} minutos`;
+
+    } catch (err) {
+        console.error("Erro ao calcular rota:", err);
+        alert("Erro inesperado ao calcular a rota.");
     }
-
-    const json = await response.json();
-    const coords = json.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
-
-    if (routeLayer) {
-        map.removeLayer(routeLayer);
-    }
-
-    routeLayer = L.polyline(coords, { color: 'blue', weight: 5 }).addTo(map);
-    map.fitBounds(routeLayer.getBounds());
-
-    const distance = (json.features[0].properties.summary.distance / 1000).toFixed(2);
-    const duration = (json.features[0].properties.summary.duration / 60).toFixed(1);
-
-    routeInfo.textContent = `Distância: ${distance} km | Tempo estimado: ${duration} minutos`;
 }
 
 // ===limpar rota ===
