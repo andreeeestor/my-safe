@@ -26,8 +26,8 @@ function carregarLocais() {
   // Se for a primeira vez, cria 10 locais iniciais
   if (locais.length === 0) {
     locais = [
-      { tipo: "seguro", nome: "Escola Estadual", descricao: "Local seguro para pedestres", lat: -19.924, lng: -43.935 },
       { tipo: "perigoso", nome: "Avenida Central", descricao: "Muitos acidentes com ciclistas", lat: -19.926, lng: -43.945 },
+      { tipo: "seguro", nome: "Escola Estadual", descricao: "Local seguro para pedestres", lat: -19.924, lng: -43.935 },
       { tipo: "seguro", nome: "Praça da Liberdade", descricao: "Boa sinalização", lat: -19.933, lng: -43.939 },
       { tipo: "perigoso", nome: "Túnel Norte", descricao: "Pouca visibilidade", lat: -19.928, lng: -43.948 },
       { tipo: "seguro", nome: "Ciclovia Sul", descricao: "Segura para ciclistas", lat: -19.918, lng: -43.941 },

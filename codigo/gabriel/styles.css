@@ -121,6 +121,13 @@ ul#locaisContainer button {
   font-size: 0.9rem;
 }
 
+ul#locaisContainer button:nth-child(1) {
+  background-color: #1976d2; 
+}
+
+ul#locaisContainer button:nth-child(2) {
+  background-color: #d32f2f; 
+}
 footer {
   text-align: center;
   padding: 1rem;
