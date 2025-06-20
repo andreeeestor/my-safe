@@ -1,10 +1,11 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background: linear-gradient(to right, #141e30, #243b55);
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #fff;
 }
+
 
 header {
   background-color: #222;
@@ -32,17 +33,19 @@ main {
 
 form,
 section {
-  background: white;
-  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
   padding: 1rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
+
 
 form h2,
 section h2 {
   margin-top: 0;
-  color: #222;
+  color: #00c6ff;
 }
 
 label {
@@ -76,10 +79,14 @@ button[type="button"] {
 }
 
 button[type="submit"] {
-  background-color: #2e7d32; /* verde seguro */
+  background-color: #00c6ff;
   color: white;
-  margin-left: 0.5rem;
 }
+
+button[type="submit"]:hover {
+  background-color: #007bff;
+}
+
 
 button:hover {
   opacity: 0.9;
@@ -99,12 +106,16 @@ ul#locaisContainer {
 }
 
 ul#locaisContainer li {
-  background: #f5f5f5;
+  background: #1c1c1c;         /* fundo escuro */
+  color: #f0f0f0;              /* texto claro para contraste */
   border-left: 6px solid #2e7d32;
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 4px;
 }
+
+
+
 
 ul#locaisContainer li.seguro {
   border-left-color: #2e7d32;
@@ -134,9 +145,10 @@ button:hover, .btn-editar:hover, .btn-remover:hover {
 
 /* Estilo para botões de ação */
 .btn-editar {
-  background-color: #f9a825; /* amarelo-alaranjado, como cones de trânsito */
-  color: white;
+  background-color: #ffd600; /* amarelo mais visível */
+  color: #000;
 }
+
 
 .btn-remover {
   background-color: #d32f2f; /* vermelho alerta */
@@ -156,5 +168,9 @@ footer {
   font-size: 1.5rem;
   line-height: 1.5rem;
   text-align: center;
+}
+
+h2, h1 {
+  color: #00c6ff;
 }
 
