@@ -1,17 +1,4 @@
 {
-  "usuarios": [
-    {
-      "id": 1,
-      "nome": "João Silva",
-      "cpf": "123.456.789-00",
-      "cnh": "12345678900"
-    },
-    {
-      "id": 2,
-      "nome": "Maria Souza",
-      "cpf": "987.654.321-00",
-      "cnh": "98765432100"
-    }
-  ],
+  "avaliacoesDenuncias": [],
   "denuncias": []
 }

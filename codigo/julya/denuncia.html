@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denúncias de Trânsito</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Denúncias de Trânsito</h1>
+        
+        <div class="form-container">
+            <h2>Adicionar Denúncia</h2>
+            <form id="denunciaForm">
+                <input type="hidden" id="id">
+                
+                <div>
+                    <label for="nome">Nome do Condutor:</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div>
+                    <label for="buscarUsuario">Buscar Usuário Cadastrado:</label>
+                    <div class="busca-container">
+                        <input type="text" id="buscarUsuario" placeholder="Digite nome ou placa">
+                        <button type="button" id="btnBuscarUsuario">Buscar</button>
+                    </div>
+                    <div id="resultadoBusca" class="resultado-busca"></div>
+                </div>
+                <div>
+                    <label for="placa">Placa do Veículo:</label>
+                    <input type="text" id="placa" required>
+                </div>
+                
+                <div>
+                    <label for="motivo">Motivo:</label>
+                    <select id="motivo" required>
+                        <option value="">Selecione...</option>
+                        <option value="Excesso de velocidade">Excesso de velocidade</option>
+                        <option value="Dirigir alcoolizado">Dirigir alcoolizado</option>
+                        <option value="Celular ao volante">Celular ao volante</option>
+                         <option value="Ultrapassagem perigosa">Ultrapassagem perigosa</option>
+                        <option value="Não uso de cinto de segurança">Não uso de cinto de segurança</option>
+                         <option value="Desrespeito à sinalização">Desrespeito à sinalização</option>
+                         <option value="Avanço de sinal vermelho">Avanço de sinal vermelho</option>
+                        <option value="Não dar preferência ao pedestre">Não dar preferência ao pedestre</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" required>
+                </div>
+                
+                <div>
+                    <label for="imagem">Imagem (opcional):</label>
+                    <input type="file" id="imagem" accept="image/*">
+                    <div id="imagemPreview" class="imagem-preview"></div>
+                </div>
+                
+                <div class="buttons">
+                    <button type="submit">Salvar</button>
+                    <button type="button" id="cancelar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="list-container">
+            <h2>Lista de Denúncias</h2>
+            <table id="tabelaDenuncias">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Placa</th>
+                        <th>Motivo</th>
+                        <th>Data</th>
+                        <th>Imagem</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+ <div class="avaliacoes-container">
+    <h2>Avaliações da Denúncia</h2>
+    <div id="denunciaSelecionadaInfo" class="denuncia-info" style="display: none;">
+        <h3>Denúncia selecionada:</h3>
+        <p><strong>Nome:</strong> <span id="infoNome"></span></p>
+        <p><strong>Placa:</strong> <span id="infoPlaca"></span></p>
+        <p><strong>Motivo:</strong> <span id="infoMotivo"></span></p>
+    </div>
+    
+    <div id="avaliacoesLista" class="avaliacoes-lista">
+        <p>Selecione uma denúncia para ver ou adicionar avaliações.</p>
+    </div>
+    
+    <div id="formAvaliacaoContainer" style="display: none;">
+        <h3>Adicionar Avaliação</h3>
+        <form id="avaliacaoForm" class="avaliacao-form">
+            <input type="hidden" id="avaliacaoDenunciaId">
+            
+            <div>
+                <label for="avaliadorNome">Seu Nome:</label>
+                <input type="text" id="avaliadorNome" required>
+            </div>
+            
+            <div>
+                <label for="avaliadorTipo">Você é:</label>
+                <select id="avaliadorTipo" required>
+                    <option value="">Selecione...</option>
+                    <option value="vitima">Vítima</option>
+                    <option value="testemunha">Testemunha</option>
+                    <option value="autoridade">Autoridade</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="avaliacaoNota">Veracidade (1-5):</label>
+                <input type="number" id="avaliacaoNota" min="1" max="5" required>
+            </div>
+            
+            <div>
+                <label for="avaliacaoComentario">Comentário:</label>
+                <textarea id="avaliacaoComentario" required></textarea>
+            </div>
+            
+            <div class="buttons">
+                <button type="submit">Enviar Avaliação</button>
+                <button type="button" id="cancelarAvaliacao">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+    <script src="javas.js"></script>
+</body>
+</html>
