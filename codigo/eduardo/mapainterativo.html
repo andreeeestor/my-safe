@@ -12,6 +12,34 @@
 
     <link rel="stylesheet" href="mapainterativo.css">
 </head>
+
+<!-- Botão de Emergência -->
+<button class="emergency-button" onclick="window.location.href='botaoemergencia.html'">
+  🚨 
+</button>
+
+<style>
+  .emergency-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+
+  .emergency-button:hover {
+    background-color: #990000;
+  }
+</style>
+
 <body>
 
 <header>My Safe-Mapa Interativo</header>
