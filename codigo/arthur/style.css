@@ -33,7 +33,6 @@ main {
   justify-content: center;
 }
 
-/* Caixas principais */
 .funcionalidade-box {
   background-color: #ffffff;
   padding: 20px;
@@ -62,7 +61,6 @@ main {
   box-shadow: 0 1px 3px rgba(0,0,0,0.03);
 }
 
-/* Avaliação de Motoristas */
 .motorista-avaliacao {
   display: flex;
   flex-direction: column;
@@ -101,8 +99,24 @@ main {
   cursor: pointer;
   color: #d1d5db;
   user-select: none;
+  transition: color 0.2s ease;
+}
+
+.estrelas .estrela {
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.estrelas .estrela:hover {
+  color: #fbbf24;
+  transform: scale(1.2);
 }
 
 .estrelas .estrela.selecionada {
   color: #f59e0b;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280;
 }
