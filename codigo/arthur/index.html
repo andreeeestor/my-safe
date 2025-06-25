@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Segurança no Trânsito</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>MySafe</h1>
+    <p>Educação e prevenção para salvar vidas</p>
+  </header>
+
+  <main>
+    <section id="educacao" class="funcionalidade-box">
+      <h2>Aulas e Conteúdos Educacionais</h2>
+      <div id="conteudos-educacionais"></div>
+    </section>
+
+    <!-- Nova seção de Avaliação de Motoristas -->
+    <section id="avaliacoes" class="funcionalidade-box">
+      <h2>Avaliação de Motoristas</h2>
+      <div class="motorista-avaliacao">
+        <label for="nomeMotorista">Nome do Motorista:</label>
+        <input type="text" id="nomeMotorista" placeholder="Digite o nome" />
+
+        <div class="estrelas">
+          <span class="estrela" data-valor="1">⭐</span>
+          <span class="estrela" data-valor="2">⭐</span>
+          <span class="estrela" data-valor="3">⭐</span>
+          <span class="estrela" data-valor="4">⭐</span>
+          <span class="estrela" data-valor="5">⭐</span>
+        </div>
+
+        <textarea id="comentario" placeholder="Digite seu comentário aqui..." rows="3"></textarea>
+        <button id="enviar-avaliacao">Enviar avaliação</button>
+      </div>
+
+      <ul id="lista-avaliacoes"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>2025 - MySafe</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
