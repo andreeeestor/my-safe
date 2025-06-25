@@ -164,12 +164,35 @@
       background-color: #990000;
     }
 
+    #btn-voltar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s, transform 0.2s;
+      z-index: 999;
+    }
+
+    #btn-voltar:hover {
+      background-color: #003c9e;
+      transform: scale(1.05);
+    }
+
     a {
       text-decoration: none;
     }
   </style>
 </head>
 <body>
+
+  <button id="btn-voltar" onclick="history.back()">← </button>
 
   <header>
     My Safe - Menu Inicial
@@ -209,7 +232,6 @@
       document.getElementById("menuDropdown").classList.toggle("show");
     }
 
-    // Fecha menu ao clicar fora
     window.addEventListener("click", function(e) {
       const dropdown = document.getElementById("menuDropdown");
       const icon = document.querySelector(".menu-icon");
