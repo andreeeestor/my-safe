@@ -29,13 +29,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // Avaliação de Motoristas
   const estrelas = document.querySelectorAll('.estrela');
   let valorSelecionado = 0;
+
   estrelas.forEach(estrela => {
+    // Clique para selecionar o valor
     estrela.addEventListener('click', () => {
       valorSelecionado = Number(estrela.dataset.valor);
-      estrelas.forEach(e => e.classList.toggle('selecionada', e.dataset.valor <= valorSelecionado));
+      atualizarEstrelas(valorSelecionado);
+    });
+
+    // Mouseover para pré-visualização
+    estrela.addEventListener('mouseover', () => {
+      const valorHover = Number(estrela.dataset.valor);
+      atualizarEstrelas(valorHover);
+    });
+
+    // Mouseout para voltar ao valor realmente selecionado
+    estrela.addEventListener('mouseout', () => {
+      atualizarEstrelas(valorSelecionado);
     });
   });
 
+  function atualizarEstrelas(valor) {
+    estrelas.forEach(e => {
+      e.classList.toggle('selecionada', Number(e.dataset.valor) <= valor);
+    });
+  }
+
+  // Avaliações salvas
   let avaliacoes = JSON.parse(localStorage.getItem('avaliacoes')) || [];
   const listaAvaliacoes = document.getElementById('lista-avaliacoes');
 
@@ -61,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('nomeMotorista').value = '';
       document.getElementById('comentario').value = '';
       valorSelecionado = 0;
-      estrelas.forEach(e => e.classList.remove('selecionada'));
+      atualizarEstrelas(0);
     } else {
       alert('Preencha o nome e selecione uma avaliação.');
     }

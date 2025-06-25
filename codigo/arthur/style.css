@@ -33,6 +33,7 @@ main {
   justify-content: center;
 }
 
+/* Funcionalidade Boxes */
 .funcionalidade-box {
   background-color: #ffffff;
   padding: 20px;
@@ -61,45 +62,26 @@ main {
   box-shadow: 0 1px 3px rgba(0,0,0,0.03);
 }
 
-.motorista-avaliacao {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.funcionalidade-box article h3 {
+  margin: 0 0 5px;
+  color: #111827;
+  font-size: 1.1rem;
 }
 
-.motorista-avaliacao label {
-  font-weight: bold;
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280;
 }
 
-.motorista-avaliacao input,
-.motorista-avaliacao textarea {
-  padding: 8px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-.motorista-avaliacao button {
-  padding: 10px;
-  background-color: #1d4ed8;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.motorista-avaliacao button:hover {
-  background-color: #2563eb;
-}
-
+/* Estilos das Estrelas */
 .estrelas {
   font-size: 1.8rem;
   cursor: pointer;
   color: #d1d5db;
   user-select: none;
-  transition: color 0.2s ease;
+  display: flex;
+  gap: 5px;
 }
 
 .estrelas .estrela {
@@ -113,10 +95,4 @@ main {
 
 .estrelas .estrela.selecionada {
   color: #f59e0b;
-}
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-  color: #6b7280;
 }
