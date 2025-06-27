@@ -32,7 +32,7 @@ Analisando a rotina de milhões de brasileiros, nota-se algo em comum: grande ma
 
 Segurança no Trânsito
 
-O principal problema que percebemos é como o trânsito está inserido na vida de cada um no cotidiano, e como a segurança nesse tópico é fundamental para que milhões de brasileiros possam se deslocar com seguridade. Pensando nisso, elaboramos uma ideia que pode revolucionar a mobilidade urbana, com a maior segurança possível.
+O principal problema que percebemos é como o trânsito está inserido na vida de cada um no cotidiano, e como a segurança nesse tópico é fundamental para que milhões de brasileiros possam se deslocar com seguridade. Como é citado na 4° edição do Codigo de Trânsito Brasileiro: "São conhecidas por todos as trágicas consequências da falta de segurança no trânsito no país. Grave é saber que os acidentes em nossas estradas não são, em sua absoluta maioria, fruto da fatalidade, mas da imprudência e da falta de informação dos motoristas". Pensando nisso, elaboramos uma ideia que pode revolucionar a mobilidade urbana, com a maior segurança possível.
 
 ## Objetivos
 O objetivo principal do projeto é resolver o problema de milhões de brasileiros que utilizam da mobilidade urbana para realizar tarefas do cotidiano de maneira segura e acessível a partir de um software para solucionar esse problema. Temos como foco principal a melhora do trânsito tanto no meio urbano quanto no meio rodoviario e de previnir acidentes que possam resultar em feridos ou em mortos.
@@ -182,15 +182,12 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 
 | Ambiente                    | Plataforma | Link de acesso                                     |
 | --------------------------- | ---------- | -------------------------------------------------- |
-| Processo de Design Thinking | Miro       | https://miro.com/XXXXXXX ⚠️ EXEMPLO ⚠️        |
-| Repositório de código     | GitHub     | https://github.com/XXXXXXX ⚠️ EXEMPLO ⚠️      |
-| Hospedagem do site          | Render     | https://site.render.com/XXXXXXX ⚠️ EXEMPLO ⚠️ |
-| Protótipo Interativo       | MarvelApp  | https://marvelapp.com/XXXXXXX ⚠️ EXEMPLO ⚠️   |
+| Processo de Design Thinking | Miro       | https://miro.com/      |
+| Repositório de código     | GitHub     | https://github.com/|
+| Hospedagem do site          | Render     | https://site.render.com/⚠️ Falta ⚠️ |
+| Protótipo Interativo       | Figma  | https://www.figma.com/pt-br/  |
 |                             |            |                                                    |
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Liste as ferramentas empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível. Inclua itens como: (1) Editor de código, (2) )ferramentas de comunicação, (3) )ferramentas de diagramação, (4) )plataformas de hospedagem, entre outras.
 
 ## Gerenciamento do Projeto
 
@@ -323,13 +320,6 @@ Esta seção apresenta os módulos e APIs utilizados na solução
 
 As referências utilizadas no trabalho foram:
 
-* SOBRENOME, Nome do autor. Título da obra. 8. ed. Cidade: Editora, 2000. 287 p ⚠️ EXEMPLO ⚠️
+* BRASIL. Lei nº 9.503, de 23 de setembro de 1997. Institui o Código de Trânsito Brasileiro. In: CÂMARA DOS DEPUTADOS. Código de Trânsito Brasileiro. 4. ed. Brasília: Edições Câmara, 2010. 297 p. (Série legislação; n. 26).
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
->
-> **Orientações**:
->
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+> 

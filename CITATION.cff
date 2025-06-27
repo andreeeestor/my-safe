@@ -2,30 +2,28 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Costa Silva
+    given-names: Arthur
+  - family-names: Araujo Reis
+    given-names: Eduardo 
+  - family-names: Guedes Martins 
+    given-names: Gabriel 
+  - family-names: Almeida Salustiano
+    given-names: Jose Henrique
+  - family-names: Oliveira Gandra
+    given-names: Julya Ketly
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Silva Tavares
+    given-names: Cleiton
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Lacerda Marques
+    given-names: Ramon
 keywords:
   - 
   - 
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2025-07-10
