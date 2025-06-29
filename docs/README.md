@@ -39,10 +39,9 @@ O objetivo principal do projeto é resolver o problema de milhões de brasileiro
 
 ## Justificativa
 
-O motivação principal para trabalhar com essa aplicação é de ajudar pessoas a terem uma vida longa e salva de acidentes. A partir de relatos, notamos que a maioria das pessoas que tem envolvimento frequente com trânsito, já presenciaram ou até mesmo sofreram algum tipo de acidente, e por isso tivemos esse encorajamento para ajduar a salvar vidas. Por isso, concluimos que a melhor alternativa seria utilizar um software para fazer essa ideia se tornar realidade.
+Aproximadamente 1,2 milhão de pessoas em todo o mundo morrem vítimas dos acidentes de trânsito a cada ano e mais de 90% dessas mortes ocorrem em países de baixa e média renda.No Brasil, o número de mortos e feridos graves ultrapassa 150 mil pessoas.A motivação principal para trabalhar com essa aplicação é de ajudar pessoas a terem uma vida longa e salva de acidentes ajudando a diminuir estes números de acidentes. A partir de relatos, notamos que a maioria das pessoas que tem envolvimento frequente com trânsito, já presenciaram ou até mesmo sofreram algum tipo de acidente, e por isso tivemos esse encorajamento para ajudar a salvar vidas. Por isso, concluimos que a melhor alternativa seria utilizar um software para fazer essa ideia se tornar realidade.
 
 ## Público-Alvo
-
 
 O público-alvo do nosso projeto são todos que tenham quaisquer tipo de relação com trânsito, de todas as idades, com o objetivo de abranger o máximo de pessoas possível. Como nosso leque de possíbilidade de clientes é grande, foi necessário criar diferentes personas, partindo desde motoristas regulares e indo para diferentes veículos, como caminhões, motos, biciletas e pedestres, por exemplo.
 
@@ -191,23 +190,15 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 
 ## Gerenciamento do Projeto
 
-Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
+Utilizamos sprints como metodologia ágil no desenvolvimento do nosso projeto. A estrutura foi composta por três sprints, cada uma com duração aproximada de duas semanas. As tarefas foram distribuídas entre funcionalidades voltadas para apresentação de informações (como exibição de dados na interface e visualizações) e funcionalidades de cadastro (como formulários de entrada de dados).
 
-![Exemplo de Kanban](images/exemplo-kanban.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
->
-> Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
->
-> **Orientações**:
->
-> - [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-> - [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-> - [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+ **Design Thinking** 
+ Utilizamos o Design Thinking como metódo para compreendermos os usuários e os desafios que nosso projeto deveria atender. O processo foi dividido nas seguintes etapas:
+ * Investigamos o contexto do problema, observamos as necessidades dos usuários por meio de pesquisas e entrevistas.
+ * A partir das informações coletadas, construímos uma definição clara do problema a ser resolvido.
+ * A equipe realizou sessões de brainstorming para gerar ideias criativas e inovadoras, priorizando as mais viáveis.
+ * Criamos protótipos de baixa e média fidelidade para validar os fluxos e interfaces propostos.
+ 
 
 # Solução Implementada
 
@@ -229,24 +220,88 @@ O vídeo a seguir traz uma apresentação do problema que a equipe está tratand
 
 Esta seção apresenta as funcionalidades da solução.Info
 
-##### Funcionalidade 1 - Cadastro de Denúncias
+##### Funcionalidade 1 - Cadastro e Avaliação de Denúncias
 
-Permite incluir, visualizar, editar e excluir denúncias de infrações de trânsito.
+Permite incluir, visualizar, editar, excluir e avaliar denúncias de infrações de trânsito.
 
-* **Estrutura de dados:** [Contatos](#ti_ed_contatos)
 * **Instruções de acesso:**
   * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção Cadastros
-  * Em seguida, escolha a opção Contatos
+  * Acesse o menu principal e escolha a opção "Denúncias".
+  * Em seguida, registre uma nova denúncia ou avalie as denúncias já cadastradas.
+
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/exemplo-funcionalidade.png)
+![Tela: Cadastro e Avaliação de Denúncias](images/funcionalidade1.png)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.
->
-> Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
+##### Funcionalidade 2 - Botão de Emergência
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Clique no botão localizado no canto inferior direito da tela para acessar a funcionalidade.
+  * Em seguida, escolha o serviço de emergência (Polícia 190, Bombeiros 193, SAMU 192)
+  * Confirme para realizar a ligação
+
+* **Tela da funcionalidade**:
+
+![Tela:Botão de Emergência](images/funcionalidade2.png)
+
+##### Funcionalidade 3 - Cadastro de contatos de emergência
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção "Cadastro de contato de emergência".
+  * Em seguida, registre um novo contato.
+
+* **Tela da funcionalidade**:
+
+![Tela: Cadastro de contatos de emergência](images/funcionalidade3.png)
+
+##### Funcionalidade 4 - Mapa Interativo
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção "Mapa Interativo".
+  * Em seguida, preencha os campos solicitados:
+    Origem: Digite um endereço (ex: "Av. Paulista, São Paulo").
+    Destino: Digite outro endereço.
+    Modo de transporte: Selecione (Carro, Bicicleta, A Pé).
+    Clique em "Calcular Rota".
+
+* **Tela da funcionalidade**:
+
+![Tela: Mapa Interativo](images/funcionalidade4.png)
+
+
+##### Funcionalidade 5 - Registro de Locais Seguros/Perigosos
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção "Registro de Locais Seguros/Perigosos".
+  * Em seguida, preencha os campos solicitados:
+    Tipo de Usuário: Selecione (Ciclista, Motorista, Pedestre).
+    Tipo de Local: Escolha "Seguro" ou "Perigoso".
+    Nome do Local: Ex: "Esquina Escura"
+    Descrição: Ex: "Falta de iluminação pública"
+  * Filtre Locais usando o menu para ver apenas seguros ou perigosos no mapa.
+
+* **Tela da funcionalidade**:
+
+![Tela: Registro de Locais Seguros/Perigosos](images/funcionalidade5.png)
+
+##### Funcionalidade 6 - Cadastro de Veículos
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção "Cadastro de Veículos".
+  * Em seguida, preencha os campos solicitados:
+    Modelo do Veículo: Ex: Sacania R440
+    Ano de Fabricação: Ex: 2018
+    Tipo de Veículo: Selecione (Ex: carro)
+    
+
+* **Tela da funcionalidade**:
+
+![Tela: Cadastro de Veículos](images/funcionalidade6.png)
 
 ## Estruturas de Dados
 
@@ -383,5 +438,7 @@ Esta seção apresenta os módulos e APIs utilizados na solução
 As referências utilizadas no trabalho foram:
 
 * BRASIL. Lei nº 9.503, de 23 de setembro de 1997. Institui o Código de Trânsito Brasileiro. In: CÂMARA DOS DEPUTADOS. Código de Trânsito Brasileiro. 4. ed. Brasília: Edições Câmara, 2010. 297 p. (Série legislação; n. 26).
+* BACCHIERI, Giancarlo; BARROS, Aluísio J. D. Acidentes de trânsito no Brasil de 1998 a 2010: muitas mudanças e poucos resultados. Revista de Saúde Pública, São Paulo, v. 45, n. 5, p. 949–963, out. 2011.
+
 
 > 
