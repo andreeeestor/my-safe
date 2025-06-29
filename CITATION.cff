@@ -1,31 +1,29 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: My Safe
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Costa Silva
+    given-names: Arthur
+  - family-names: Araujo Reis
+    given-names: Eduardo 
+  - family-names: Guedes Martins 
+    given-names: Gabriel 
+  - family-names: Almeida Salustiano
+    given-names: Jose Henrique
+  - family-names: Oliveira Gandra
+    given-names: Julya Ketly
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Silva Tavares
+    given-names: Cleiton
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Lacerda Marques
+    given-names: Ramon
 keywords:
   - 
   - 
-repository-code: 
+repository-code: https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti1-2010100-my-safe.git
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2025-07-10

@@ -7,10 +7,50 @@
     <link rel="stylesheet" href="emergencia.css">
     <script src="emergencia.js" defer></script>
 </head>
+
+<!--voltar -->
+<style>
+  .back-button {
+    position: fixed;
+    top: 20px; /* topo esquerdo para telas grandes */
+    left: 20px;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #222;
+  }
+
+  /* Responsivo: centralizado embaixo para telas pequenas */
+  @media screen and (max-width: 600px) {
+    .back-button {
+      top: auto;               /* remove top */
+      bottom: 200px;            /* posiciona no final da tela */
+      left: 50%;               /* centraliza horizontalmente */
+      transform: translateX(-50%);
+      padding: 15px 30px;
+      font-size: 18px;
+    }
+  }
+</style>
+
+
 <body onload="carregarPagina()">
     <header>
         <h1>MySafe - Botão de Emergência</h1>
     </header>
+
+
 
     <main>
         <div id="container" class="container">
@@ -19,6 +59,8 @@
         <div id="alerta-auto" class="mensagem"></div>
     </main>
 
+    <button class="back-button" onclick="window.location.href = '/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/paginainicial.html'">Voltar</button>
+    
     <footer>
         <p>&copy; 2025 MySafe - Segurança no Trânsito</p>
     </footer>

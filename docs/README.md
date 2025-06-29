@@ -32,17 +32,16 @@ Analisando a rotina de milhões de brasileiros, nota-se algo em comum: grande ma
 
 Segurança no Trânsito
 
-O principal problema que percebemos é como o trânsito está inserido na vida de cada um no cotidiano, e como a segurança nesse tópico é fundamental para que milhões de brasileiros possam se deslocar com seguridade. Pensando nisso, elaboramos uma ideia que pode revolucionar a mobilidade urbana, com a maior segurança possível.
+O principal problema que percebemos é como o trânsito está inserido na vida de cada um no cotidiano, e como a segurança nesse tópico é fundamental para que milhões de brasileiros possam se deslocar com seguridade. Como é citado na 4° edição do Codigo de Trânsito Brasileiro: "São conhecidas por todos as trágicas consequências da falta de segurança no trânsito no país. Grave é saber que os acidentes em nossas estradas não são, em sua absoluta maioria, fruto da fatalidade, mas da imprudência e da falta de informação dos motoristas". Pensando nisso, elaboramos uma ideia que pode revolucionar a mobilidade urbana, com a maior segurança possível.
 
 ## Objetivos
 O objetivo principal do projeto é resolver o problema de milhões de brasileiros que utilizam da mobilidade urbana para realizar tarefas do cotidiano de maneira segura e acessível a partir de um software para solucionar esse problema. Temos como foco principal a melhora do trânsito tanto no meio urbano quanto no meio rodoviario e de previnir acidentes que possam resultar em feridos ou em mortos.
 
 ## Justificativa
 
-O motivação principal para trabalhar com essa aplicação é de ajudar pessoas a terem uma vida longa e salva de acidentes. A partir de relatos, notamos que a maioria das pessoas que tem envolvimento frequente com trânsito, já presenciaram ou até mesmo sofreram algum tipo de acidente, e por isso tivemos esse encorajamento para ajduar a salvar vidas. Por isso, concluimos que a melhor alternativa seria utilizar um software para fazer essa ideia se tornar realidade.
+Aproximadamente 1,2 milhão de pessoas em todo o mundo morrem vítimas dos acidentes de trânsito a cada ano e mais de 90% dessas mortes ocorrem em países de baixa e média renda.No Brasil, o número de mortos e feridos graves ultrapassa 150 mil pessoas.A motivação principal para trabalhar com essa aplicação é de ajudar pessoas a terem uma vida longa e salva de acidentes ajudando a diminuir estes números de acidentes. A partir de relatos, notamos que a maioria das pessoas que tem envolvimento frequente com trânsito, já presenciaram ou até mesmo sofreram algum tipo de acidente, e por isso tivemos esse encorajamento para ajudar a salvar vidas. Por isso, concluimos que a melhor alternativa seria utilizar um software para fazer essa ideia se tornar realidade.
 
 ## Público-Alvo
-
 
 O público-alvo do nosso projeto são todos que tenham quaisquer tipo de relação com trânsito, de todas as idades, com o objetivo de abranger o máximo de pessoas possível. Como nosso leque de possíbilidade de clientes é grande, foi necessário criar diferentes personas, partindo desde motoristas regulares e indo para diferentes veículos, como caminhões, motos, biciletas e pedestres, por exemplo.
 
@@ -182,35 +181,24 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 
 | Ambiente                    | Plataforma | Link de acesso                                     |
 | --------------------------- | ---------- | -------------------------------------------------- |
-| Processo de Design Thinking | Miro       | https://miro.com/XXXXXXX ⚠️ EXEMPLO ⚠️        |
-| Repositório de código     | GitHub     | https://github.com/XXXXXXX ⚠️ EXEMPLO ⚠️      |
-| Hospedagem do site          | Render     | https://site.render.com/XXXXXXX ⚠️ EXEMPLO ⚠️ |
-| Protótipo Interativo       | MarvelApp  | https://marvelapp.com/XXXXXXX ⚠️ EXEMPLO ⚠️   |
+| Processo de Design Thinking | Miro       | https://miro.com/      |
+| Repositório de código     | GitHub     | https://github.com/|
+| Hospedagem do site          | Render     | https://site.render.com/⚠️ Falta ⚠️ |
+| Protótipo Interativo       | Figma  | https://www.figma.com/pt-br/  |
 |                             |            |                                                    |
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Liste as ferramentas empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível. Inclua itens como: (1) Editor de código, (2) )ferramentas de comunicação, (3) )ferramentas de diagramação, (4) )plataformas de hospedagem, entre outras.
 
 ## Gerenciamento do Projeto
 
-Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
+Utilizamos sprints como metodologia ágil no desenvolvimento do nosso projeto. A estrutura foi composta por três sprints, cada uma com duração aproximada de duas semanas. As tarefas foram distribuídas entre funcionalidades voltadas para apresentação de informações (como exibição de dados na interface e visualizações) e funcionalidades de cadastro (como formulários de entrada de dados).
 
-![Exemplo de Kanban](images/exemplo-kanban.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
->
-> Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
->
-> **Orientações**:
->
-> - [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-> - [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-> - [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+ **Design Thinking** 
+ Utilizamos o Design Thinking como metódo para compreendermos os usuários e os desafios que nosso projeto deveria atender. O processo foi dividido nas seguintes etapas:
+ * Investigamos o contexto do problema, observamos as necessidades dos usuários por meio de pesquisas e entrevistas.
+ * A partir das informações coletadas, construímos uma definição clara do problema a ser resolvido.
+ * A equipe realizou sessões de brainstorming para gerar ideias criativas e inovadoras, priorizando as mais viáveis.
+ * Criamos protótipos de baixa e média fidelidade para validar os fluxos e interfaces propostos.
+ 
 
 # Solução Implementada
 
@@ -232,104 +220,225 @@ O vídeo a seguir traz uma apresentação do problema que a equipe está tratand
 
 Esta seção apresenta as funcionalidades da solução.Info
 
-##### Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
+##### Funcionalidade 1 - Cadastro e Avaliação de Denúncias
 
-Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
+Permite incluir, visualizar, editar, excluir e avaliar denúncias de infrações de trânsito.
 
-* **Estrutura de dados:** [Contatos](#ti_ed_contatos)
 * **Instruções de acesso:**
   * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção Cadastros
-  * Em seguida, escolha a opção Contatos
+  * Acesse o menu principal e escolha a opção "Denúncias".
+  * Em seguida, registre uma nova denúncia ou avalie as denúncias já cadastradas.
+
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/exemplo-funcionalidade.png)
+![Tela: Cadastro e Avaliação de Denúncias](images/funcionalidade1.png)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.
->
-> Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
+##### Funcionalidade 2 - Botão de Emergência
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Clique no botão localizado no canto inferior direito da tela para acessar a funcionalidade.
+  * Em seguida, escolha o serviço de emergência (Polícia 190, Bombeiros 193, SAMU 192)
+  * Confirme para realizar a ligação
+
+* **Tela da funcionalidade**:
+
+![Tela:Botão de Emergência](images/funcionalidade2.png)
+
+##### Funcionalidade 3 - Cadastro de contatos de emergência
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção "Cadastro de contato de emergência".
+  * Em seguida, registre um novo contato.
+
+* **Tela da funcionalidade**:
+
+![Tela: Cadastro de contatos de emergência](images/funcionalidade3.png)
+
+##### Funcionalidade 4 - Mapa Interativo
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção "Mapa Interativo".
+  * Em seguida, preencha os campos solicitados:
+    Origem: Digite um endereço (ex: "Av. Paulista, São Paulo").
+    Destino: Digite outro endereço.
+    Modo de transporte: Selecione (Carro, Bicicleta, A Pé).
+    Clique em "Calcular Rota".
+
+* **Tela da funcionalidade**:
+
+![Tela: Mapa Interativo](images/funcionalidade4.png)
+
+
+##### Funcionalidade 5 - Registro de Locais Seguros/Perigosos
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção "Registro de Locais Seguros/Perigosos".
+  * Em seguida, preencha os campos solicitados:
+    Tipo de Usuário: Selecione (Ciclista, Motorista, Pedestre).
+    Tipo de Local: Escolha "Seguro" ou "Perigoso".
+    Nome do Local: Ex: "Esquina Escura"
+    Descrição: Ex: "Falta de iluminação pública"
+  * Filtre Locais usando o menu para ver apenas seguros ou perigosos no mapa.
+
+* **Tela da funcionalidade**:
+
+![Tela: Registro de Locais Seguros/Perigosos](images/funcionalidade5.png)
+
+##### Funcionalidade 6 - Cadastro de Veículos
+
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção "Cadastro de Veículos".
+  * Em seguida, preencha os campos solicitados:
+    Modelo do Veículo: Ex: Sacania R440
+    Ano de Fabricação: Ex: 2018
+    Tipo de Veículo: Selecione (Ex: carro)
+    
+
+* **Tela da funcionalidade**:
+
+![Tela: Cadastro de Veículos](images/funcionalidade6.png)
 
 ## Estruturas de Dados
 
 Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
 
-##### Estrutura de Dados - Contatos   ⚠️ EXEMPLO ⚠️
+##### Estrutura de Dados - Cadastro de Denúncias 
 
-Contatos da aplicação
+Registro e Avaliação de Denúncias de Infrações de Trânsito
 
 ```json
   {
-    "id": 1,
-    "nome": "Leanne Graham",
-    "cidade": "Belo Horizonte",
-    "categoria": "amigos",
-    "email": "Sincere@april.biz",
-    "telefone": "1-770-736-8031",
-    "website": "hildegard.org"
-  }
+  "denuncias": [
+    {
+      "id": 1,
+      "nome": "Eva Silva",
+      "placa": "AE5521",
+      "motivo": "Não usou cinto de segurança",
+      "descricao": "O motorista estava sem cinto enquanto dirigia.",
+      "data": "2023-09-21",
+      "imagem": ""
+    }
+  ],
+  "avaliacoes": [
+    {
+      "id": 1,
+      "denunciaId": 1,
+      "avaliadorNome": "Lana Santos",
+      "avaliadorTipo": "Motorista",
+      "veracidade": 4,
+      "comentario": "A denúncia parece correta, testemunhei o ocorrido.",
+      "data": "2023-10-22"
+    }
+  ]
+}
   
 ```
 
-##### Estrutura de Dados - Usuários  ⚠️ EXEMPLO ⚠️
+##### Estrutura de Dados - Cadastro de Veículos
 
-Registro dos usuários do sistema utilizados para login e para o perfil do sistema
+Registro de Veículos Cadastrados
 
 ```json
   {
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    email: "admin@abc.com",
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    login: "admin",
-    nome: "Administrador do Sistema",
-    senha: "123"
+  "veiculos": [
+    {
+      "id": 1,
+      "modelo": "Ford Ka",
+      "anoFabricacao": 2022,
+      "tipo": "moto",
+      "informacoesAdicionais": ""
+    }
+   ]
   }
 ```
+##### Estrutura de Dados - Locais Seguros
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração
->
-> Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.
->
-> **Orientações:**
->
-> * [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
-> * [Trabalhando com JSON - Aprendendo desenvolvimento web | MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON)
+Realiza o cadastro e a gestão de informações sobre locais considerados seguros.
+
+```json
+ {
+  "locais": [
+    {
+      "id": 1,
+      "usuario": "Ciclista",
+      "tipo": "perigoso",
+      "nome": "Cruzamento da Rua A com Av. B",
+      "descricao": "Ponto cego frequente com acidentes entre carros e bicicletas",
+      "endereco": "Rua A, 100 - Centro, Belo Horizonte/MG"
+    }
+  ]
+}
+```
+##### Estrutura de Dados - Avaliação de aulas
+
+Permite o registro da qualidade das aulas através de avaliações feitas pelo usuário.
+
+```json
+ {
+  "avaliacoesAulas": [
+    {
+      "id": 1,
+      "aulaId": 101,
+      "aulaTitulo": "Direção Defensiva",
+      "comentario": "Ótima explicação.",
+      "estrelas": 4
+    }
+  ]
+}
+```
+
+##### Estrutura de Dados - Cadatro de Usuários
+
+Permite o registro informações dos usuários do sistema.
+
+```json
+ {
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Ana Silva",
+      "email": "ana@email.com",
+      "senha": "$2a$10$N9qo8uLOickgx2ZMRZoMy...",
+    }
+  ]
+ }
+```
 
 ## Módulos e APIs
 
 Esta seção apresenta os módulos e APIs utilizados na solução
 
-**Images**:
+**Mapas e Geocodificação**:
 
-* Unsplash - [https://unsplash.com/](https://unsplash.com/) ⚠️ EXEMPLO ⚠️
+* Leaflet JS - [https://leafletjs.com/](https://leafletjs.com/) 
+* OpenStreetMap - [https://www.openstreetmap.org/](https://www.openstreetmap.org/) 
+* Nominatim (OSM Geocoding) - [https://nominatim.openstreetmap.org/](https://nominatim.openstreetmap.org/) 
+* Photon (Komoot) - [ https://photon.komoot.io/]( https://photon.komoot.io/) 
+* OpenRouteService - [https://openrouteservice.org/](https://openrouteservice.org/) 
 
-**Fonts:**
+**APIs do Navegador:**
 
-* Icons Font Face - [https://fontawesome.com/](https://fontawesome.com/) ⚠️ EXEMPLO ⚠️
+* Geolocation API - [https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) 
+* LocalStorage API - [https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 
+* Fetch API - [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 
 
-**Scripts:**
+**Bibliotecas Externas::**
 
-* jQuery - [http://www.jquery.com/](http://www.jquery.com/) ⚠️ EXEMPLO ⚠️
-* Bootstrap 4 - [http://getbootstrap.com/](http://getbootstrap.com/) ⚠️ EXEMPLO ⚠️
+* Bootstrap Icons - [https://icons.getbootstrap.com/](https://icons.getbootstrap.com/) 
+* Bootstrap 5 - [https://getbootstrap.com/](https://getbootstrap.com/) 
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
 
 # Referências
 
 As referências utilizadas no trabalho foram:
 
-* SOBRENOME, Nome do autor. Título da obra. 8. ed. Cidade: Editora, 2000. 287 p ⚠️ EXEMPLO ⚠️
+* BRASIL. Lei nº 9.503, de 23 de setembro de 1997. Institui o Código de Trânsito Brasileiro. In: CÂMARA DOS DEPUTADOS. Código de Trânsito Brasileiro. 4. ed. Brasília: Edições Câmara, 2010. 297 p. (Série legislação; n. 26).
+* BACCHIERI, Giancarlo; BARROS, Aluísio J. D. Acidentes de trânsito no Brasil de 1998 a 2010: muitas mudanças e poucos resultados. Revista de Saúde Pública, São Paulo, v. 45, n. 5, p. 949–963, out. 2011.
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
->
-> **Orientações**:
->
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+
+> 
