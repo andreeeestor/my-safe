@@ -71,7 +71,7 @@ function filtrarLocais() {
   });
 }
 
-document.getElementById("marcarLocal").addEventListener("click", () => {
+document.getElementById("marcar").addEventListener("click", () => {
   mapa.once('click', function (e) {
     const tipo = document.getElementById("tipo").value;
     if (!tipo) {

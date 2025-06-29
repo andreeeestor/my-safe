@@ -11,24 +11,12 @@
 
 <div class="form-container">
     <h2>Cadastro de Veículos</h2>
-    <form id="formCaminhoneiro">
+    <form id="formVeiculo">
         <label for="modelo">Modelo do Veículo</label>
-        <input type="text" id="modelo" name="modelo" placeholder="Ex: Scania R440">
+        <input type="text" id="modelo" name="modelo" placeholder="Ex: Scania R440" required>
 
         <label for="ano">Ano de Fabricação</label>
-        <input type="number" id="ano" name="ano" placeholder="Ex: 2018" min="1980" max="2025">
-
-        <label for="tipoCarga">Tipo de Veículo</label>
-        <select id="tipoCarga" name="tipoCarga">
-            <option value="">-- Selecione --</option>
-            <option value="granel">Carro</option>
-            <option value="frigorificada">Moto</option>
-            <option value="perigosa">Bicicleta</option>
-            <option value="container">Micro-ônibus</option>
-            <option value="outros">Ônibus</option>
-            <option value="madeira">Caminhão</option>
-        </select>
-
+        <input type="number" id="ano" name="ano" placeholder="Ex: 2018" min="1980" max="2025" required>
 
         <label for="infoAdicional">Informações Adicionais</label>
         <textarea id="infoAdicional" name="infoAdicional" rows="4" placeholder="Detalhes adicionais..."></textarea>
@@ -39,7 +27,7 @@
 
 <div class="table-container">
     <h3>Lista de Veículos</h3>
-    <table id="tabelaCaminhoneiros">
+    <table id="tabelaVeiculos">
         <thead>
             <tr>
                 <th>Modelo</th>
@@ -51,9 +39,10 @@
         <tbody></tbody>
     </table>
 </div>
-</body>
+
 <footer>
     <p>&copy; 2025 MySafe - Segurança no Trânsito</p>
 </footer>
+
 <script src="app.js"></script>
 </html>

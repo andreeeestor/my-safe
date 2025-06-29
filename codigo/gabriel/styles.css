@@ -1,17 +1,19 @@
+/* Estilo geral */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #141e30, #243b55);
+  background-color: #f9f9f9;
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: #333;
 }
 
-
+/* Cabeçalho */
 header {
-  background-color: #222;
+  background-color: #0055cc;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -20,34 +22,34 @@ header h1 {
 }
 
 header p {
-  margin: 0.5rem 0 0;
+  margin-top: 0.5rem;
   font-size: 1.1rem;
-  color: #ccc;
+  color: #e0e0e0;
 }
 
+/* Área principal */
 main {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
+/* Formulários e seções */
 form,
 section {
-  background: rgba(0, 0, 0, 0.6);
+  background: white;
   border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-
-form h2,
-section h2 {
+h2 {
   margin-top: 0;
-  color: #00c6ff;
+  color: #0055cc;
 }
 
+/* Inputs e selects */
 label {
   display: block;
   margin-top: 1rem;
@@ -55,122 +57,127 @@ label {
 }
 
 input[type="text"],
+input[type="hidden"],
 textarea,
 select {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
 }
 
+/* Botões gerais */
 button {
-  margin-top: 1rem;
   padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1rem;
 }
 
-button[type="button"] {
-  background-color: #f9a825; /* amarelo de atenção */
-  color: black;
-}
-
-button[type="submit"] {
-  background-color: #00c6ff;
+/* Botão "Marcar Local" */
+#marcar,
+button.marcar {
+  background-color: #0055cc;
   color: white;
 }
+#marcar:hover,
+button.marcar:hover {
+  background-color: #003d99;
+}
 
+/* Botão "Registrar Local" */
+button[type="submit"] {
+  background-color: #00c853;
+  color: white;
+}
 button[type="submit"]:hover {
-  background-color: #007bff;
+  background-color: #009624;
 }
 
-
-button:hover {
-  opacity: 0.9;
+/* Botão editar */
+.btn-editar {
+  background-color: #ffeb3b;
+  color: black;
+}
+.btn-editar:hover {
+  background-color: #fdd835;
 }
 
+/* Botão remover */
+.btn-remover {
+  background-color: #e53935;
+  color: white;
+}
+.btn-remover:hover {
+  background-color: #c62828;
+}
+
+/* Lista de locais */
+ul#locaisContainer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul#locaisContainer li {
+  background: #f1f1f1;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 6px solid #0055cc;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+ul#locaisContainer li strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Mapa */
 #mapa {
   width: 100%;
   height: 400px;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-top: 1rem;
   border: 2px solid #ccc;
 }
 
-ul#locaisContainer {
-  list-style: none;
-  padding: 0;
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 0 0.5rem;
+  }
+
+  form, section {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  #mapa {
+    height: 300px;
+  }
 }
 
-ul#locaisContainer li {
-  background: #1c1c1c;         /* fundo escuro */
-  color: #f0f0f0;              /* texto claro para contraste */
-  border-left: 6px solid #2e7d32;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 4px;
-}
-
-
-
-
-ul#locaisContainer li.seguro {
-  border-left-color: #2e7d32;
-}
-
-ul#locaisContainer li.perigoso {
-  border-left-color: #c62828;
-}
-
-ul#locaisContainer button {
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
-}
-button, .btn-editar, .btn-remover {
-  padding: 8px 16px;
-  margin-right: 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover, .btn-editar:hover, .btn-remover:hover {
-  opacity: 0.9;
-}
-
-/* Estilo para botões de ação */
-.btn-editar {
-  background-color: #ffd600; /* amarelo mais visível */
-  color: #000;
-}
-
-
-.btn-remover {
-  background-color: #d32f2f; /* vermelho alerta */
-  color: white;
-}
-
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #eee;
-  color: #555;
-  margin-top: 2rem;
-}
-
+/* Ícone personalizado no mapa (ajuste opcional) */
 .map-icon {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 20px;
   text-align: center;
+  line-height: 24px;
 }
-
-h2, h1 {
-  color: #00c6ff;
-}
-
