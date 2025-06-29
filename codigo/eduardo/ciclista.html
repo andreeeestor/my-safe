@@ -1,0 +1,172 @@
+ciclista.html:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Segurança para Ciclistas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #3f51b5;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px 5px 0 0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    button:hover {
+      background-color: #303f9f;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<!--voltar -->
+<style>
+  .back-button {
+    position: fixed;
+    top: 20px; /* topo esquerdo para telas grandes */
+    left: 20px;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #222;
+  }
+
+  /* Responsivo: centralizado embaixo para telas pequenas */
+  @media screen and (max-width: 600px) {
+    .back-button {
+      top: auto;               /* remove top */
+      bottom: 8%;            /* posiciona no final da tela */
+      left: 50%;               /* centraliza horizontalmente */
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  }
+</style>
+
+<!-- Botão de Emergência -->
+<button class="emergency-button" onclick="window.location.href='botaoemergencia.html'">
+  🚨 
+</button>
+
+<style>
+  .emergency-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+
+  .emergency-button:hover {
+    background-color: #990000;
+  }
+</style>
+
+
+<body>
+
+<button class="back-button" onclick="window.location.href = '/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/paginainicial.html'">Voltar</button>
+
+<header>
+  <h1>Segurança no Trânsito: Ciclistas</h1>
+  <p>Pedale com atenção e respeito mútuo.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>🚴‍♂ Dicas de Segurança</h2>
+    <ul>
+      <li>Use capacete e itens refletivos, mesmo de dia.</li>
+      <li>Ande sempre no sentido do tráfego, nunca na contramão.</li>
+      <li>Sinalize com os braços ao virar.</li>
+      <li>Evite andar em calçadas e respeite os pedestres.</li>
+      <li>Mantenha sua bicicleta revisada e com os freios funcionando.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>✅ Recomendações</h2>
+    <p>Evite usar fones de ouvido ao pedalar. Prefira vias com ciclovia e evite pontos cegos de veículos grandes.</p>
+  </section>
+
+  <section>
+    <h2>📰 Notícia em Destaque</h2>
+    <p><strong>Cidades brasileiras ampliam ciclovias</strong>: Capitais como São Paulo e Recife investem em mais infraestrutura cicloviária com separadores físicos e sinalização reforçada. <a href="#">Veja mais</a></p>
+  </section>
+
+  <section>
+    <h2>🌐 Acesse também</h2>
+    <button onclick="location.href='paginainicial.html'">Página Inicial</button>
+      <button onclick="location.href='mapainterativo.html'">Mapa Interativo</button>
+      <button onclick="location.href='/pmg-es-2025-1-ti1-2010100-my-safe/codigo/arthur/index.html'">Aulas</button>
+      <button onclick="location.href='contato.html'">Contato</button>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 - Projeto Segurança no Trânsito.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+contato.html:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fale Conosco</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #303f9f;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<!--voltar -->
+<style>
+  .back-button {
+    position: fixed;
+    top: 20px; /* topo esquerdo para telas grandes */
+    left: 20px;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #222;
+  }
+
+  /* Responsivo: centralizado embaixo para telas pequenas */
+  @media screen and (max-width: 600px) {
+    .back-button {
+      top: auto;               /* remove top */
+      bottom: 8%;            /* posiciona no final da tela */
+      left: 50%;               /* centraliza horizontalmente */
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  }
+</style>
+
+<!-- Botão de Emergência -->
+<button class="emergency-button" onclick="window.location.href='botaoemergencia.html'">
+  🚨 
+</button>
+
+<style>
+  .emergency-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+
+  .emergency-button:hover {
+    background-color: #990000;
+  }
+</style>
+
+
+<body>
+
+    <button class="back-button" onclick="window.location.href = '/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/paginainicial.html'">Voltar</button>
+
+  <header>
+    <h1>Entre em Contato conosco!</h1>
+    <p>Envie sua dúvida, sugestão ou relato.</p>
+  </header>
+
+  <main>
+    <form action="#" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 - Projeto Segurança no Trânsito.
+  </footer>
+
+</body>
+</html>
