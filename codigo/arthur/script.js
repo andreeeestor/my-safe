@@ -31,19 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let valorSelecionado = 0;
 
   estrelas.forEach(estrela => {
-    // Clique para selecionar o valor
     estrela.addEventListener('click', () => {
       valorSelecionado = Number(estrela.dataset.valor);
       atualizarEstrelas(valorSelecionado);
     });
 
-    // Mouseover para pré-visualização
     estrela.addEventListener('mouseover', () => {
       const valorHover = Number(estrela.dataset.valor);
       atualizarEstrelas(valorHover);
     });
 
-    // Mouseout para voltar ao valor realmente selecionado
     estrela.addEventListener('mouseout', () => {
       atualizarEstrelas(valorSelecionado);
     });
@@ -55,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Avaliações salvas
   let avaliacoes = JSON.parse(localStorage.getItem('avaliacoes')) || [];
   const listaAvaliacoes = document.getElementById('lista-avaliacoes');
 
@@ -67,23 +63,35 @@ document.addEventListener('DOMContentLoaded', () => {
       listaAvaliacoes.appendChild(li);
     });
   }
-  renderAvaliacoes();
+  if (listaAvaliacoes) renderAvaliacoes();
 
-  document.getElementById('enviar-avaliacao').addEventListener('click', () => {
-    const nomeMotorista = document.getElementById('nomeMotorista').value;
-    const comentario = document.getElementById('comentario').value;
+  const enviarBtn = document.getElementById('enviar-avaliacao');
+  if (enviarBtn) {
+    enviarBtn.addEventListener('click', () => {
+      const nomeMotorista = document.getElementById('nomeMotorista').value;
+      const comentario = document.getElementById('comentario').value;
 
-    if (nomeMotorista.trim() && valorSelecionado > 0) {
-      avaliacoes.push({ nome: nomeMotorista, nota: valorSelecionado, comentario });
-      localStorage.setItem('avaliacoes', JSON.stringify(avaliacoes));
-      renderAvaliacoes();
+      if (nomeMotorista.trim() && valorSelecionado > 0) {
+        avaliacoes.push({ nome: nomeMotorista, nota: valorSelecionado, comentario });
+        localStorage.setItem('avaliacoes', JSON.stringify(avaliacoes));
+        renderAvaliacoes();
 
-      document.getElementById('nomeMotorista').value = '';
-      document.getElementById('comentario').value = '';
-      valorSelecionado = 0;
-      atualizarEstrelas(0);
-    } else {
-      alert('Preencha o nome e selecione uma avaliação.');
-    }
-  });
+        document.getElementById('nomeMotorista').value = '';
+        document.getElementById('comentario').value = '';
+        valorSelecionado = 0;
+        atualizarEstrelas(0);
+      } else {
+        alert('Preencha o nome e selecione uma avaliação.');
+      }
+    });
+  }
+
+  // Botão de Emergência funcional com histórico
+  const botaoEmergencia = document.getElementById('botao-emergencia');
+  if (botaoEmergencia) {
+    botaoEmergencia.addEventListener('click', () => {
+      localStorage.setItem('voltar_de_emergencia', 'sim');
+      window.location.href = '../eduardo/botaoemergencia.html';
+    });
+  }
 });
