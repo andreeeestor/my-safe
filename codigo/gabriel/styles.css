@@ -9,8 +9,8 @@ body {
 
 /* Cabeçalho */
 header {
-  background-color: #0055cc;
-  color: white;
+  background-color: white;
+  color: blue;
   padding: 1.5rem 1rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -24,7 +24,7 @@ header h1 {
 header p {
   margin-top: 0.5rem;
   font-size: 1.1rem;
-  color: #e0e0e0;
+  color: blue;
 }
 
 /* Área principal */
@@ -219,8 +219,8 @@ ul#locaisContainer li strong {
 }
 
 footer {
-  background-color: #0055cc;
-  color: white;
+  background-color: white;
+  color: blue;
   text-align: center;
   padding: 1rem 0;
   font-size: 0.95rem;
