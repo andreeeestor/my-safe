@@ -151,6 +151,47 @@ ul#locaisContainer li strong {
   border: 2px solid #ccc;
 }
 
+.emergency-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+
+  .emergency-button:hover {
+    background-color: #990000;
+  }
+
+   .back-button {
+    position: fixed;
+    top: 52px;
+    left: 20px;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #222;
+  }
+
 /* Responsividade */
 @media screen and (max-width: 768px) {
   header h1 {
