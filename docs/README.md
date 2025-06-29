@@ -194,6 +194,9 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 
 Utilizamos sprints como metodologia ágil no desenvolvimento do nosso projeto. A estrutura foi composta por três sprints, cada uma com duração aproximada de duas semanas. As tarefas foram distribuídas entre funcionalidades voltadas para apresentação de informações (como exibição de dados na interface e visualizações) e funcionalidades de cadastro (como formulários de entrada de dados).
 
+**Kanban** 
+![Quadro Kanban ](images/kanban.png)
+
  **Design Thinking** 
  Utilizamos o Design Thinking como metódo para compreendermos os usuários e os desafios que nosso projeto deveria atender. O processo foi dividido nas seguintes etapas:
  * Investigamos o contexto do problema, observamos as necessidades dos usuários por meio de pesquisas e entrevistas.
