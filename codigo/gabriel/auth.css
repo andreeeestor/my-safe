@@ -5,22 +5,24 @@
   box-sizing: border-box;
 }
 
+/* Corpo */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #141e30, #243b55);
-  color: #fff;
+  background-color: #ffffff; /* fundo branco */
+  color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-/* Container principal */
+/* Formulário */
 form {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #f4f4f4;
   padding: 30px 40px;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -32,20 +34,23 @@ h2 {
   color: #00c6ff;
 }
 
+/* Campos */
 input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
 }
 
 input:focus {
   outline: none;
+  border-color: #00c6ff;
   box-shadow: 0 0 5px #00c6ff;
 }
 
+/* Botão */
 button {
   background-color: #00c6ff;
   border: none;
@@ -62,8 +67,11 @@ button:hover {
   background-color: #007bff;
 }
 
+/* Parágrafo e links */
 p {
   margin-top: 10px;
+  font-size: 14px;
+  color: #555;
 }
 
 a {
