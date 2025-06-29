@@ -11,7 +11,7 @@ document.getElementById("form-login").addEventListener("submit", (e) => {
   if (usuario) {
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
     alert("Login realizado!");
-    window.location.href = "/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/paginainicial.html";
+    window.location.href = "../eduardo/paginainicial.html";
   } else {
     alert("Usuário ou senha inválidos!");
   }
