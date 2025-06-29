@@ -358,22 +358,25 @@ Permite o registro informações dos usuários do sistema.
 
 Esta seção apresenta os módulos e APIs utilizados na solução
 
-**Images**:
+**Mapas e Geocodificação**:
 
-* Unsplash - [https://unsplash.com/](https://unsplash.com/) ⚠️ EXEMPLO ⚠️
+* Leaflet JS - [https://leafletjs.com/](https://leafletjs.com/) 
+* OpenStreetMap - [https://www.openstreetmap.org/](https://www.openstreetmap.org/) 
+* Nominatim (OSM Geocoding) - [https://nominatim.openstreetmap.org/](https://nominatim.openstreetmap.org/) 
+* Photon (Komoot) - [ https://photon.komoot.io/]( https://photon.komoot.io/) 
+* OpenRouteService - [https://openrouteservice.org/](https://openrouteservice.org/) 
 
-**Fonts:**
+**APIs do Navegador:**
 
-* Icons Font Face - [https://fontawesome.com/](https://fontawesome.com/) ⚠️ EXEMPLO ⚠️
+* Geolocation API - [https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) 
+* LocalStorage API - [https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 
+* Fetch API - [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 
 
-**Scripts:**
+**Bibliotecas Externas::**
 
-* jQuery - [http://www.jquery.com/](http://www.jquery.com/) ⚠️ EXEMPLO ⚠️
-* Bootstrap 4 - [http://getbootstrap.com/](http://getbootstrap.com/) ⚠️ EXEMPLO ⚠️
+* Bootstrap Icons - [https://icons.getbootstrap.com/](https://icons.getbootstrap.com/) 
+* Bootstrap 5 - [https://getbootstrap.com/](https://getbootstrap.com/) 
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
 
 # Referências
 
