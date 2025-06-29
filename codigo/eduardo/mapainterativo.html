@@ -18,7 +18,7 @@
 <style>
   .back-button {
     position: fixed;
-    top: 52px;
+    top: 20px; /* topo esquerdo para telas grandes */
     left: 20px;
     margin: 0;
     padding: 10px 20px;
@@ -30,18 +30,22 @@
     font-size: 16px;
     z-index: 999;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .back-button:hover {
     background-color: #222;
   }
 
-  /* Responsivo */
+  /* Responsivo: centralizado embaixo para telas pequenas */
   @media screen and (max-width: 600px) {
     .back-button {
-      padding: 8px 16px;
-      font-size: 14px;
+      top: auto;               /* remove top */
+      bottom: 8%;            /* posiciona no final da tela */
+      left: 50%;               /* centraliza horizontalmente */
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 18px;
     }
   }
 </style>
