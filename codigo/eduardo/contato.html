@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Fale Conosco</title>
   <style>
     body {
@@ -12,15 +12,15 @@
       color: #333;
     }
     header, footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    background-color: transparent;
-    color: #1d4ed8;
-    font-weight: bold;
-    flex-shrink: 0;
-    font-size: x-large;
-}
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      background-color: transparent;
+      color: #1d4ed8;
+      font-weight: bold;
+      flex-shrink: 0;
+      font-size: x-large;
+    }
     main {
       max-width: 600px;
       margin: 40px auto;
@@ -40,6 +40,7 @@
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      box-sizing: border-box;
     }
     button {
       margin-top: 20px;
@@ -49,80 +50,76 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #1d4ed8;
+      background-color: #1a40c7;
     }
-    
+    /* Botão Voltar */
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      margin: 0;
+      padding: 10px 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #222;
+    }
+    @media screen and (max-width: 600px) {
+      .back-button {
+        top: auto;
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        font-size: 18px;
+      }
+    }
+    /* Botão Emergência */
+    .emergency-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+    .emergency-button:hover {
+      background-color: #990000;
+    }
+    /* Mensagem de confirmação */
+    #success-message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #d1e7dd;
+      color: #0f5132;
+      border-radius: 5px;
+      font-weight: bold;
+      border: 1px solid #badbcc;
+    }
   </style>
 </head>
-<!--voltar -->
-<style>
-  .back-button {
-    position: fixed;
-    top: 20px; /* topo esquerdo para telas grandes */
-    left: 20px;
-    margin: 0;
-    padding: 10px 20px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .back-button:hover {
-    background-color: #222;
-  }
-
-  /* Responsivo: centralizado embaixo para telas pequenas */
-  @media screen and (max-width: 600px) {
-    .back-button {
-      top: auto;               /* remove top */
-      bottom: 8%;            /* posiciona no final da tela */
-      left: 50%;               /* centraliza horizontalmente */
-      transform: translateX(-50%);
-      padding: 10px 20px;
-      font-size: 18px;
-    }
-  }
-</style>
-
-<!-- Botão de Emergência -->
-<button class="emergency-button" onclick="window.location.href='botaoemergencia.html'">
-  🚨 
-</button>
-
-<style>
-  .emergency-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #cc0000;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 18px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    z-index: 999;
-    transition: background-color 0.3s ease;
-  }
-
-  .emergency-button:hover {
-    background-color: #990000;
-  }
-</style>
-
-
 <body>
 
-    <button class="back-button" onclick="window.location.href = '../eduardo/paginainicial.html'">Voltar</button>
+  <button class="back-button" onclick="window.location.href = '../eduardo/paginainicial.html'">Voltar</button>
 
   <header>
     <h1>MySafe</h1>
@@ -130,23 +127,50 @@
   </header>
 
   <main>
-    <form action="#" method="post">
+    <form id="contact-form">
       <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+      <input type="text" id="nome" name="nome" required />
 
       <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required />
 
       <label for="mensagem">Mensagem:</label>
       <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
       <button type="submit">Enviar</button>
     </form>
+
+    <div id="success-message">Mensagem enviada com sucesso! Obrigado pelo contato.</div>
   </main>
 
   <footer>
-        &copy; 2025 MySafe
+    &copy; 2025 MySafe
   </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // evita o envio real
+
+      // Opcional: validar dados aqui, mas como tem required no HTML, já é ok
+
+      // Simula envio: mostra mensagem de sucesso
+      successMessage.style.display = 'block';
+
+      // Limpa o formulário
+      form.reset();
+
+      // Esconde a mensagem depois de 5 segundos
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+  
+  <!-- Botão Emergência -->
+  <button class="emergency-button" onclick="window.location.href='botaoemergencia.html'">🚨</button>
 
 </body>
 </html>
