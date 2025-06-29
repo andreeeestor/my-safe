@@ -1,3 +1,5 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18984102&assignment_repo_type=AssignmentRepo)
+
 # Introdução
 
 Informações básicas do projeto.
@@ -182,9 +184,9 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 | Ambiente                    | Plataforma | Link de acesso                                     |
 | --------------------------- | ---------- | -------------------------------------------------- |
 | Processo de Design Thinking | Miro       | https://miro.com/      |
-| Repositório de código     | GitHub     | https://github.com/|
-| Hospedagem do site          | Render     | https://site.render.com/⚠️ Falta ⚠️ |
-| Protótipo Interativo       | Figma  | https://www.figma.com/pt-br/  |
+| Repositório de código       | GitHub     | https://github.com/    |
+| Hospedagem do site          | Vercel     | https://vercel.com/    |
+| Protótipo Interativo        | Figma      | https://www.figma.com/pt-br/  |
 |                             |            |                                                    |
 
 
@@ -204,18 +206,6 @@ Utilizamos sprints como metodologia ágil no desenvolvimento do nosso projeto. A
 
 Esta seção apresenta todos os detalhes da solução criada no projeto.
 
-## Vídeo do Projeto
-
-O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. ⚠️ EXEMPLO ⚠️
-
-[![Vídeo do projeto](images/video.png)](https://www.youtube.com/embed/70gGoFyGeqQ)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é livre, sendo importante que seja apresentado o problema e a solução numa linguagem descomplicada e direta.
->
-> Inclua um link para o vídeo do projeto.
-
 ## Funcionalidades
 
 Esta seção apresenta as funcionalidades da solução.Info
@@ -225,8 +215,7 @@ Esta seção apresenta as funcionalidades da solução.Info
 Permite incluir, visualizar, editar, excluir e avaliar denúncias de infrações de trânsito.
 
 * **Instruções de acesso:**
-  * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção "Denúncias".
+  * Acesse o menu principal e escolha a opção "Realizar Denúncias".
   * Em seguida, registre uma nova denúncia ou avalie as denúncias já cadastradas.
 
 * **Tela da funcionalidade**:
@@ -236,7 +225,6 @@ Permite incluir, visualizar, editar, excluir e avaliar denúncias de infrações
 ##### Funcionalidade 2 - Botão de Emergência
 
 * **Instruções de acesso:**
-  * Abra o site e efetue o login
   * Clique no botão localizado no canto inferior direito da tela para acessar a funcionalidade.
   * Em seguida, escolha o serviço de emergência (Polícia 190, Bombeiros 193, SAMU 192)
   * Confirme para realizar a ligação
@@ -245,16 +233,15 @@ Permite incluir, visualizar, editar, excluir e avaliar denúncias de infrações
 
 ![Tela:Botão de Emergência](images/funcionalidade2.png)
 
-##### Funcionalidade 3 - Cadastro de contatos de emergência
+##### Funcionalidade 3 -Entrar em Contato
 
 * **Instruções de acesso:**
-  * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção "Cadastro de contato de emergência".
-  * Em seguida, registre um novo contato.
+  * Acesse o menu e escolha a opção "Entrar em Contato".
+  * Em seguida, registre sua mensagem.
 
 * **Tela da funcionalidade**:
 
-![Tela: Cadastro de contatos de emergência](images/funcionalidade3.png)
+![Tela: Entrar em Contato](images/funcionalidade3.png)
 
 ##### Funcionalidade 4 - Mapa Interativo
 
@@ -275,8 +262,7 @@ Permite incluir, visualizar, editar, excluir e avaliar denúncias de infrações
 ##### Funcionalidade 5 - Registro de Locais Seguros/Perigosos
 
 * **Instruções de acesso:**
-  * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção "Registro de Locais Seguros/Perigosos".
+  * Acesse o menu principal e escolha a opção "Registro de Locais".
   * Em seguida, preencha os campos solicitados:
     Tipo de Usuário: Selecione (Ciclista, Motorista, Pedestre).
     Tipo de Local: Escolha "Seguro" ou "Perigoso".
@@ -302,6 +288,17 @@ Permite incluir, visualizar, editar, excluir e avaliar denúncias de infrações
 * **Tela da funcionalidade**:
 
 ![Tela: Cadastro de Veículos](images/funcionalidade6.png)
+
+##### Funcionalidade 7 - Aulas
+
+* **Instruções de acesso:**
+  * Acesse o menu e escolha a opção "Aulas".
+  * Em seguida, selecione a aula desejada.
+    
+* **Tela da funcionalidade**:
+
+![Tela: Aulas](images/funcionalidade7.png)
+
 
 ## Estruturas de Dados
 
@@ -374,23 +371,6 @@ Realiza o cadastro e a gestão de informações sobre locais considerados seguro
   ]
 }
 ```
-##### Estrutura de Dados - Avaliação de aulas
-
-Permite o registro da qualidade das aulas através de avaliações feitas pelo usuário.
-
-```json
- {
-  "avaliacoesAulas": [
-    {
-      "id": 1,
-      "aulaId": 101,
-      "aulaTitulo": "Direção Defensiva",
-      "comentario": "Ótima explicação.",
-      "estrelas": 4
-    }
-  ]
-}
-```
 
 ##### Estrutura de Dados - Cadatro de Usuários
 
@@ -408,6 +388,21 @@ Permite o registro informações dos usuários do sistema.
   ]
  }
 ```
+## Testes
+* Espera-se que as funcionalidades de cadastro sejam devidamente listadas e que as informações sejam apresentadas de forma correta.
+
+![Teste: Aulas](images/teste3.jpg)
+
+![Teste: Cadastro e Avaliação de Denúncias](images/teste7.jpg)
+
+![Teste: Mapa Interativo](images/teste5.jpg)
+
+![Teste:Botão de Emergência](images/teste2.jpg)
+
+![Teste: Cadastro de Veículos](images/teste4.jpg)
+
+![Teste: Registro de Locais Seguros/Perigosos](images/teste6.jpg)
+
 
 ## Módulos e APIs
 
