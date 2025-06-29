@@ -21,7 +21,7 @@ body {
 h2, h3 {
   margin-top: 0;
   text-align: center;
-  color: #00509e;
+  color: #1d4ed8;
 }
 
 /* Labels e Inputs */
@@ -44,10 +44,20 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: #00509e;
+  border-color: #1d4ed8;
   outline: none;
 }
 
+header, footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: transparent;
+    color: #1d4ed8;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: x-large;
+}
 /* Botões */
 button {
   background-color: #00509e;
@@ -93,16 +103,7 @@ table th {
   margin: 2px;
 }
 
-/* Rodapé */
-footer {
-  width: 100%;
-  text-align: center;
-  padding: 20px 0;
-  background-color: transparent;
-  color: #00509e;
-  font-weight: bold;
-  flex-shrink: 0;
-}
+
 
 .menu-horizontal {
   display: flex;

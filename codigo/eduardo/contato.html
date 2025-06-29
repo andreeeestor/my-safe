@@ -11,12 +11,16 @@
       background-color: #f9f9f9;
       color: #333;
     }
-    header {
-      background-color: #3f51b5;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+    header, footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: transparent;
+    color: #1d4ed8;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: x-large;
+}
     main {
       max-width: 600px;
       margin: 40px auto;
@@ -40,21 +44,16 @@
     button {
       margin-top: 20px;
       padding: 12px 20px;
-      background-color: #3f51b5;
+      background-color: #1d4ed8;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #303f9f;
+      background-color: #1d4ed8;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #aaa;
-    }
+    
   </style>
 </head>
 <!--voltar -->
@@ -126,8 +125,8 @@
     <button class="back-button" onclick="window.location.href = '../eduardo/paginainicial.html'">Voltar</button>
 
   <header>
-    <h1>Entre em Contato conosco!</h1>
-    <p>Envie sua dúvida, sugestão ou relato.</p>
+    <h1>MySafe</h1>
+    <p>Entre em Contato conosco</p>
   </header>
 
   <main>
@@ -146,7 +145,7 @@
   </main>
 
   <footer>
-        &copy; 2025 MySafe - Segurança no Trânsito
+        &copy; 2025 MySafe
   </footer>
 
 </body>

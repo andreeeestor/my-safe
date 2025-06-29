@@ -7,6 +7,65 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
+
+
+<style>
+  .back-button {
+    position: fixed;
+    top: 20px; /* topo esquerdo para telas grandes */
+    left: 20px;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #222;
+  }
+
+  /* Responsivo: centralizado embaixo para telas pequenas */
+  @media screen and (max-width: 600px) {
+    .back-button {
+      top: auto;               /* remove top */
+      bottom: 7%;            /* posiciona no final da tela */
+      left: 50%;               /* centraliza horizontalmente */
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  }
+</style>
+
+<style>
+  .emergency-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+
+  .emergency-button:hover {
+    background-color: #990000;
+  }
+</style>
+
 <body>
   <header>
     <h1>MySafe</h1>
@@ -15,14 +74,7 @@
 
   <button class="back-button" onclick="window.location.href = '../eduardo/paginainicial.html'">Voltar</button>
 
-  <nav class="menu-horizontal">
-  <a href="../jose/cadastroveiculos.html">Cadastro de Veículos</a>
-  <a href="../eduardo/mapainterativo.html">Mapa Interativo</a>
-  <a href="../arthur/index.html">Aulas</a>
-  <a href="index.html">Registro de Locais</a>
-    <a href="../julya/denuncia.html">Realizar Denúncia</a>
-
-</nav>
+  
 
 
 

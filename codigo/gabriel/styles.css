@@ -10,12 +10,21 @@ body {
 /* Cabeçalho */
 header {
   background-color: white;
-  color: blue;
+  color: 1d4ed8;
   padding: 1.5rem 1rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
+header, footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: transparent;
+    color: #1d4ed8;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: x-large;
+}
 header h1 {
   margin: 0;
   font-size: 2rem;
@@ -24,7 +33,7 @@ header h1 {
 header p {
   margin-top: 0.5rem;
   font-size: 1.1rem;
-  color: blue;
+  color: 1d4ed8;
 }
 
 /* Área principal */
@@ -218,16 +227,7 @@ ul#locaisContainer li strong {
   border-radius: 4px;
 }
 
-footer {
-  background-color: white;
-  color: blue;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.95rem;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
-  border-top: 3px solid #003d99;
-}
+
 
 
 
