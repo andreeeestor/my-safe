@@ -8,6 +8,38 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
+<!--voltar -->
+<style>
+  .back-button {
+    position: fixed;
+    top: 52px;
+    left: 20px;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #222;
+  }
+
+  /* Responsivo */
+  @media screen and (max-width: 600px) {
+    .back-button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+</style>
+
 <!-- Botão de Emergência -->
 <button class="emergency-button" onclick="window.location.href='/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/botaoemergencia.html'">
   🚨 
@@ -41,6 +73,8 @@
     <h1>MySafe</h1>
     <p>Registre locais seguros e perigosos no trânsito</p>
   </header>
+
+  <button class="back-button" onclick="window.location.href = '/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/paginainicial.html'">Voltar</button>
 
   <main>
     <form class="registro-form" id="formRegistro">
