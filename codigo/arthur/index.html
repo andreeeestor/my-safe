@@ -6,74 +6,9 @@
   <title>Segurança no Trânsito</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
-<!--voltar -->
-<style>
-  .back-button {
-    position: fixed;
-    top: 20px; /* topo esquerdo para telas grandes */
-    left: 20px;
-    margin: 0;
-    padding: 10px 20px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .back-button:hover {
-    background-color: #222;
-  }
-
-  /* Responsivo: centralizado embaixo para telas pequenas */
-  @media screen and (max-width: 600px) {
-    .back-button {
-      top: auto;               /* remove top */
-      bottom: 8%;            /* posiciona no final da tela */
-      left: 50%;               /* centraliza horizontalmente */
-      transform: translateX(-50%);
-      padding: 10px 20px;
-      font-size: 18px;
-    }
-  }
-</style>
-
-
-<!-- Botão de Emergência -->
-<button class="emergency-button" onclick="window.location.href='/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/botaoemergencia.html'">
-  🚨 
-</button>
-
-<style>
-  .emergency-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #cc0000;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 18px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    z-index: 999;
-    transition: background-color 0.3s ease;
-  }
-
-  .emergency-button:hover {
-    background-color: #990000;
-  }
-</style>
-
 <body>
-
-  <button class="back-button" onclick="window.location.href = '/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/paginainicial.html'">Voltar</button>
+  <!-- Botão Voltar preto no canto superior esquerdo -->
+  <a href="../eduardo/paginainicial.html" class="btn-voltar-preto">Voltar</a>
 
   <header>
     <h1>MySafe</h1>
@@ -85,32 +20,16 @@
       <h2>Aulas e Conteúdos Educacionais</h2>
       <div id="conteudos-educacionais"></div>
     </section>
-
-    <section id="avaliacoes" class="funcionalidade-box">
-      <h2>Avaliação de Motoristas</h2>
-      <div class="motorista-avaliacao">
-        <label for="nomeMotorista">Nome do Motorista:</label>
-        <input type="text" id="nomeMotorista" placeholder="Digite o nome" />
-
-        <div class="estrelas">
-          <span class="estrela" data-valor="1">⭐</span>
-          <span class="estrela" data-valor="2">⭐</span>
-          <span class="estrela" data-valor="3">⭐</span>
-          <span class="estrela" data-valor="4">⭐</span>
-          <span class="estrela" data-valor="5">⭐</span>
-        </div>
-
-        <textarea id="comentario" placeholder="Digite seu comentário aqui..." cols="40" rows="4"></textarea>
-        <button id="enviar-avaliacao">Enviar avaliação</button>
-      </div>
-
-      <ul id="lista-avaliacoes"></ul>
-    </section>
   </main>
 
   <footer>
     <p>2025 - MySafe</p>
   </footer>
+
+  <!-- Botão de Emergência -->
+  <button class="emergency-button" onclick="window.location.href='../eduardo/botaoemergencia.html'">
+    🚨
+  </button>
 
   <script src="script.js"></script>
 </body>

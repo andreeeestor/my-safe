@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vídeo Educacional</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Álcool e Direção</title>
   <style>
     body {
       margin: 0;
@@ -17,25 +17,22 @@
       min-height: 100vh;
     }
 
-    header,footer{
+    header, footer {
       width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    background-color: transparent;
-    color: #1d4ed8;
-    font-weight: bold;
-    flex-shrink: 0;
+      text-align: center;
+      padding: 20px 0;
+      color: #1d4ed8;
+      font-weight: bold;
     }
 
     .video-container {
-      position: relative;
       width: 90%;
       max-width: 800px;
       aspect-ratio: 16/9;
       margin-top: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     iframe {
@@ -49,90 +46,61 @@
       font-size: 0.9rem;
       color: #6b7280;
     }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 999;
+    }
+
+    .back-button:hover {
+      background-color: #222;
+    }
+
+    .emergency-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .emergency-button:hover {
+      background-color: #990000;
+    }
   </style>
 </head>
-
-<!--voltar -->
-<style>
-  .back-button {
-    position: fixed;
-    top: 20px; /* topo esquerdo para telas grandes */
-    left: 20px;
-    margin: 0;
-    padding: 10px 20px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .back-button:hover {
-    background-color: #222;
-  }
-
-  /* Responsivo: centralizado embaixo para telas pequenas */
-  @media screen and (max-width: 600px) {
-    .back-button {
-      top: auto;               /* remove top */
-      bottom: 8%;            /* posiciona no final da tela */
-      left: 50%;               /* centraliza horizontalmente */
-      transform: translateX(-50%);
-      padding: 10px 20px;
-      font-size: 18px;
-    }
-  }
-</style>
-
-
-<!-- Botão de Emergência -->
-<button class="emergency-button" onclick="window.location.href='/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/botaoemergencia.html'">
-  🚨 
-</button>
-
-<style>
-  .emergency-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #cc0000;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 18px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    z-index: 999;
-    transition: background-color 0.3s ease;
-  }
-
-  .emergency-button:hover {
-    background-color: #990000;
-  }
-</style>
-
 <body>
 
-  <button class="back-button" onclick="window.location.href = '/pmg-es-2025-1-ti1-2010100-my-safe/codigo/arthur/index.html'">Voltar</button>
+  <button class="back-button" onclick="window.location.href='index.html'">Voltar</button>
+  <button class="emergency-button" onclick="window.location.href='/pmg-es-2025-1-ti1-2010100-my-safe/codigo/eduardo/botaoemergencia.html'">🚨</button>
 
   <header>
-    <h1>My Safe-Álcool e Direção</h1>
+    <h1>MySafe - Álcool e Direção</h1>
   </header>
 
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/rk3FocKFROU" 
-            title="YouTube video" 
-            allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/rk3FocKFROU" title="Álcool e Direção" allowfullscreen></iframe>
   </div>
 
   <footer>
-        <p>&copy; 2025 MySafe - Segurança no Trânsito</p>
-    </footer>
+    <p>&copy; 2025 MySafe - Segurança no Trânsito</p>
+  </footer>
 
 </body>
 </html>
