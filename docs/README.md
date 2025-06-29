@@ -229,9 +229,9 @@ O vídeo a seguir traz uma apresentação do problema que a equipe está tratand
 
 Esta seção apresenta as funcionalidades da solução.Info
 
-##### Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
+##### Funcionalidade 1 - Cadastro de Denúncias
 
-Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
+Permite incluir, visualizar, editar e excluir denúncias de infrações de trânsito.
 
 * **Estrutura de dados:** [Contatos](#ti_ed_contatos)
 * **Instruções de acesso:**
@@ -252,48 +252,107 @@ Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
 
 Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
 
-##### Estrutura de Dados - Contatos   ⚠️ EXEMPLO ⚠️
+##### Estrutura de Dados - Cadastro de Denúncias 
 
-Contatos da aplicação
+Registro e Avaliação de Denúncias de Infrações de Trânsito
 
 ```json
   {
-    "id": 1,
-    "nome": "Leanne Graham",
-    "cidade": "Belo Horizonte",
-    "categoria": "amigos",
-    "email": "Sincere@april.biz",
-    "telefone": "1-770-736-8031",
-    "website": "hildegard.org"
-  }
+  "denuncias": [
+    {
+      "id": 1,
+      "nome": "Eva Silva",
+      "placa": "AE5521",
+      "motivo": "Não usou cinto de segurança",
+      "descricao": "O motorista estava sem cinto enquanto dirigia.",
+      "data": "2023-09-21",
+      "imagem": ""
+    }
+  ],
+  "avaliacoes": [
+    {
+      "id": 1,
+      "denunciaId": 1,
+      "avaliadorNome": "Lana Santos",
+      "avaliadorTipo": "Motorista",
+      "veracidade": 4,
+      "comentario": "A denúncia parece correta, testemunhei o ocorrido.",
+      "data": "2023-10-22"
+    }
+  ]
+}
   
 ```
 
-##### Estrutura de Dados - Usuários  ⚠️ EXEMPLO ⚠️
+##### Estrutura de Dados - Cadastro de Veículos
 
-Registro dos usuários do sistema utilizados para login e para o perfil do sistema
+Registro de Veículos Cadastrados
 
 ```json
   {
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    email: "admin@abc.com",
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    login: "admin",
-    nome: "Administrador do Sistema",
-    senha: "123"
+  "veiculos": [
+    {
+      "id": 1,
+      "modelo": "Ford Ka",
+      "anoFabricacao": 2022,
+      "tipo": "moto",
+      "informacoesAdicionais": ""
+    }
+   ]
   }
 ```
+##### Estrutura de Dados - Locais Seguros
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração
->
-> Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.
->
-> **Orientações:**
->
-> * [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
-> * [Trabalhando com JSON - Aprendendo desenvolvimento web | MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON)
+Realiza o cadastro e a gestão de informações sobre locais considerados seguros.
+
+```json
+ {
+  "locais": [
+    {
+      "id": 1,
+      "usuario": "Ciclista",
+      "tipo": "perigoso",
+      "nome": "Cruzamento da Rua A com Av. B",
+      "descricao": "Ponto cego frequente com acidentes entre carros e bicicletas",
+      "endereco": "Rua A, 100 - Centro, Belo Horizonte/MG"
+    }
+  ]
+}
+```
+##### Estrutura de Dados - Avaliação de aulas
+
+Permite o registro da qualidade das aulas através de avaliações feitas pelo usuário.
+
+```json
+ {
+  "avaliacoesAulas": [
+    {
+      "id": 1,
+      "aulaId": 101,
+      "aulaTitulo": "Direção Defensiva",
+      "comentario": "Ótima explicação.",
+      "estrelas": 4
+    }
+  ]
+}
+```
+
+##### Estrutura de Dados - Cadatro de Usuários
+
+Permite o registro informações dos usuários do sistema.
+
+```json
+ {
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Ana Silva",
+      "email": "ana@email.com",
+      "senha": "$2a$10$N9qo8uLOickgx2ZMRZoMy...",
+    }
+  ]
+ }
+```
 
 ## Módulos e APIs
 
